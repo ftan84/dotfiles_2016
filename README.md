@@ -9,7 +9,8 @@ airline will render the glyphs properly
 ## Installation
 Change into the dotfiles directory and run the install.sh script.
 
-```cd ~/dotfiles
+```
+cd ~/dotfiles
 ./install.sh
 ```
 
