@@ -98,7 +98,7 @@ set softtabstop=4
 set omnifunc=syntaxcomplete#Complete
 
 " Fixes weird backspace problems
-" set backspace=2
+set backspace=2
 
 " Wrap settings
 " set wrap
