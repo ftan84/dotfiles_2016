@@ -50,6 +50,7 @@ echo "Installing vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
 
 echo "Creating symbolic links"
+rm ~/.vimrc
 rm ~/.zshrc
 rm ~/.emacs
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme

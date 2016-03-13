@@ -38,6 +38,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'ivanov/vim-ipython.git'
 " Plugin 'alfredodeza/pytest.vim'
 " Plugin 'klen/python-mode'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 " ==========================================
