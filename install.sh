@@ -56,6 +56,7 @@ rm ~/.emacs
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
+ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 
 echo "Configuring zsh to be the default shell"
 chsh -s $(which zsh)
