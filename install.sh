@@ -54,6 +54,7 @@ rm ~/.vimrc
 rm ~/.zshrc
 rm ~/.emacs
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
+ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 
