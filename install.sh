@@ -42,9 +42,6 @@ sudo pip install virtualenv
 sudo pip install --no-deps virtualenvwrapper
 sudo pip install --no-deps stevedore
 
-echo "Installing oh-my-zsh"
-rm ~/.zshrc
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 echo "Creating vim directories"
 mkdir -p ~/.vim-tmp
@@ -55,13 +52,16 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vund
 echo "Creating symbolic links"
 rm ~/.zshrc
 rm ~/.emacs
-rm ~/.zshrc.pre-oh-my-zsh
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
-ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 
+echo "Installing oh-my-zsh"
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
 echo "Configuring zsh to be the default shell"
+rm ~/.zshrc.pre-oh-my-zsh
+ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 chsh -s $(which zsh)
 
 exit 0

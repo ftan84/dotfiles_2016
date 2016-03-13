@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Alias for ls
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
     alias ll="ls -aFhl"  # Color arg doesn't work on Mac
 else
     alias ll="LC_COLLATE=C ls -aFhl --color"
