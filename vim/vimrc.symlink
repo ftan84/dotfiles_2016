@@ -3,9 +3,9 @@ if v:progname == "vi"
     finish
 endif
 
-" =====================
+" ======================
 " Reset settings
-" =====================
+" ======================
 
 " It changes other options as side effect
 set nocompatible
