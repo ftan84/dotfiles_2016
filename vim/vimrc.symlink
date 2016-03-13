@@ -55,7 +55,8 @@ set encoding=utf-8
 set clipboard=unnamedplus
 
 " Set the font to work with powerline symbols
-set guifont=Inconsolata\ for\ Powerline\ 12
+" set guifont=Inconsolata\ for\ Powerline\ 12
+set guifont=Hack:h14
 
 " Startup options for gui vim
 set guioptions-=T  "remove toolbar
