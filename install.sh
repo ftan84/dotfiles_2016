@@ -4,8 +4,7 @@
 # according to my liking. Much of the code here was drawn from
 # nicknisi/dotfiles
 
-PACKAGES = "zsh tree git-flow"
-
+sudo -s
 echo "Installing dotfiles"
 
 # Check to see if we are running on OS X
@@ -16,17 +15,23 @@ if [ "$(uname)" == "Darwin" ]; then
 	if test ! $(which brew); then
 		echo "Installing Homebrew"
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
-		echo "Homebrew successfully installed!"
 	fi
 
 	echo "Installing packages"
-	brew install $PACKAGES
+	brew install wget
+	brew install zsh
+	brew install tree
+	brew install git-flow
 else
 	# sudo apt-get -y install zsh emacs24 tree multitail git-flow
-	sudo apt-get -y install $PACKAGES
+	# sudo apt-get -y install $PACKAGES
 	# rm ~/.zshrc
 	# ln -s ~/.environment_settings/.emacs ~/.emacs
 	# sudo chsh -s $(which zsh)
+	sudo apt-get -y install wget
+	sudo apt-get -y install zsh
+	sudo apt-get -y install tree
+	sudo apt-get -y install git-flow
 fi
 
 echo "Installing pip for Python"
@@ -42,6 +47,9 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 echo "Creating vim directories"
 mkdir -p ~/.vim-tmp
 
+echo "Installing vundle"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+
 echo "Creating symbolic links"
 rm ~/.zshrc
 rm ~/.emacs
@@ -51,3 +59,5 @@ ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 
 echo "Configuring zsh to be the default shell"
 chsh -s $(which zsh)
+
+exit 0
