@@ -4,8 +4,7 @@
 # according to my liking. Much of the code here was drawn from
 # nicknisi/dotfiles
 
-sudo -s
-echo "Installing dotfiles"
+sudo echo "Installing dotfiles"
 
 # Check to see if we are running on OS X
 if [ "$(uname)" == "Darwin" ]; then
@@ -42,6 +41,7 @@ sudo pip install virtualenv
 sudo pip install virtualenvwrapper
 
 echo "Installing oh-my-zsh"
+rm ~/.zshrc
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 echo "Creating vim directories"
