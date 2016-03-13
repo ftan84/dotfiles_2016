@@ -16,7 +16,7 @@ set nocompatible
 
 " Setup for vundle
 filetype off
-set rtp+=~/.environment_settings/vim/bundle/Vundle.vim
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Initialize the vundle plugin
@@ -135,7 +135,7 @@ set noswapfile
 set mouse=a
 
 " Settings for the modules
-source ~/.environment_settings/vim/module_settings
+source ~/dotfiles/vim/module_settings
 
 " Printing options
 set popt=number:y
