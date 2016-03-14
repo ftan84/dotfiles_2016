@@ -19,6 +19,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install git-flow
     brew install vim
     brew install tmux
+    brew install python-dev
 else
     sudo apt-get -y install wget
     sudo apt-get -y install zsh
@@ -26,6 +27,7 @@ else
     sudo apt-get -y install git-flow
     sudo apt-get -y install vim
     sudo apt-get -y install tmux
+    sudo apt-get -y install python-dev
 fi
 
 # Installing pip
