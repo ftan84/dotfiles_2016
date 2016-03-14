@@ -8,6 +8,7 @@
 tm_active_border_color=colour10
 
 tm_icon="♟"
+# tm_color_background=colour234
 tm_color_background=colour234
 tm_color_active=colour118
 tm_color_inactive=colour241
@@ -28,12 +29,14 @@ set -g status-interval 5
 # default statusbar colors
 # set-option -g status-bg colour0
 set-option -g status-fg $tm_color_active
-set-option -g status-bg default
+# set-option -g status-bg default
+set-option -g status-bg $tm_color_background
 set-option -g status-attr default
 
 # default window title colors
 set-window-option -g window-status-fg $tm_color_inactive
-set-window-option -g window-status-bg default
+# set-window-option -g window-status-bg default
+set-option -g status-bg $tm_color_background
 set -g window-status-format "#I #W"
 
 # active window title colors
