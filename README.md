@@ -1,5 +1,8 @@
 # Dotfiles
-A set of environment setting dotfiles that are tuned to my personal preference
+A set of environment setting dotfiles that are tuned to my personal preference.
+
+These dotfiles are really for my personal use. Much of the code can be credited
+to [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles).
 
 ## Requirements
 The install script should install everything needed for the environment to run properly.

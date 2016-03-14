@@ -52,7 +52,8 @@ set modifiable
 set encoding=utf-8
 
 " Shared clipboard
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
+set clipboard+=unnamed
 
 " Set the font to work with powerline symbols
 " set guifont=Inconsolata\ for\ Powerline\ 12
