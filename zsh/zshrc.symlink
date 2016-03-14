@@ -95,6 +95,7 @@ fi
 
 # Set 256 term
 export TERM="xterm-256color"
+[ -z "$TMUX" ] && export TERM=xterm-256color
 
 # Sets system time to Pacific
 export TZ="/usr/share/zoneinfo/America/Los_Angeles"
@@ -102,3 +103,5 @@ export TZ="/usr/share/zoneinfo/America/Los_Angeles"
 # Alias for multitail
 alias multitail="multitail -cS python-log"
 
+# Alias for tmux
+alias tm="tmux new-session -s"

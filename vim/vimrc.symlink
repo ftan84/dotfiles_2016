@@ -66,7 +66,7 @@ set guioptions-=L  "remove left-hand scroll bar
 
 " This terminal supports colors
 " set term=rxvt-256color
-set term=xterm-256color
+set term=screen-256color
 
 " Color scheme
 set t_Co=256
@@ -191,7 +191,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 
 " Fugitive settings
-nnoremap <Leader>stat :Gstatus<CR>
+nnoremap <Leader>git :Gstatus<CR>
 nnoremap <Leader>push :Gpush origin
 
 " Run nosetests
