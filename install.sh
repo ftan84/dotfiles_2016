@@ -10,7 +10,6 @@ sudo echo "Installing dotfiles..."
 if [ "$(uname)" == "Darwin" ]; then
     # Check to see if Homebrew is installed. Install otherwise
     if test ! $(which brew); then
-        echo "Installing Homebrew"
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
     fi
 
