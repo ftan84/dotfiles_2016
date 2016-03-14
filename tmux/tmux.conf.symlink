@@ -63,10 +63,10 @@ bind s split-window -v -c "#{pane_current_path}"
 bind y setw synchronize-panes
 
 # pane movement shortcuts
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+# bind h select-pane -L
+# bind j select-pane -D
+# bind k select-pane -U
+# bind l select-pane -R
 
 bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
