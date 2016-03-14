@@ -57,6 +57,7 @@ ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
+ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
 
 echo "Installing oh-my-zsh"
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
