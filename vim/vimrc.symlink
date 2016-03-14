@@ -39,6 +39,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'alfredodeza/pytest.vim'
 " Plugin 'klen/python-mode'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 " ==========================================
@@ -162,10 +163,10 @@ let mapleader = ","
 
 " Window key mappings
 " Using Ctrl
-nmap <C-h> <C-W>h
-nmap <C-j> <C-W>j
-nmap <C-k> <C-W>k
-nmap <C-l> <C-W>l
+" nmap <C-h> <C-W>h
+" nmap <C-j> <C-W>j
+" nmap <C-k> <C-W>k
+" nmap <C-l> <C-W>l
 
 " Change the save function to leader s
 nnoremap <Leader>s :w<CR>
