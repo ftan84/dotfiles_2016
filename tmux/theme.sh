@@ -5,7 +5,7 @@
 # tm_color_inactive=colour241
 # tm_color_feature=colour10
 # tm_color_music=colour10
-# tm_active_border_color=colour10
+tm_active_border_color=colour10
 
 tm_icon="♟"
 tm_color_background=colour234
