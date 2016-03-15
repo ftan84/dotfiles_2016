@@ -88,6 +88,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Alias for ls
 if [ "$(uname)" = "Darwin" ]; then
+    export CLICOLOR_FORCE="true"
     alias ll="ls -aFhl"  # Color arg doesn't work on Mac
     alias l="ls -aFhl | awk '{print \$1, \$9}'"
 else
