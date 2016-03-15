@@ -89,11 +89,11 @@ source $ZSH/oh-my-zsh.sh
 # Alias for ls
 if [ "$(uname)" = "Darwin" ]; then
     export CLICOLOR_FORCE="true"
-    alias ll="ls -aFhl"  # Color arg doesn't work on Mac
-    alias l="ls -aFhl | awk '{print \$1, \$9}'"
+    alias ll="ls -ahl"  # Color arg doesn't work on Mac
+    alias l="ls -ahl | awk '{print \$1, \$9}'"
 else
-    alias ll="LC_COLLATE=C ls -aFhl --color"
-    alias l="LC_COLLATE=C ls -aFhl --color | awk '{print \$1, \$9}'"
+    alias ll="LC_COLLATE=C ls -ahl --color"
+    alias l="LC_COLLATE=C ls -ahl --color | awk '{print \$1, \$9}'"
 fi
 
 # Set 256 term
