@@ -44,22 +44,33 @@ mkdir -p ~/.vim-tmp
 # Install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
 
+
+# Change default shell to zsh
+# chsh -s $(which zsh)
+
+# Install Oh My Zsh
+# sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# rm ~/.zshrc.pre-oh-my-zsh
+# ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
+
+# Manual Install of Oh-My-Zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
 # Symlinks
-rm ~/.vimrc
-rm ~/.zshrc
-rm ~/.emacs
-ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
-ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
+# rm ~/.vimrc
+# rm ~/.zshrc
+# rm ~/.emacs
+mkdir ~/.old-dotfiles
+mv ~/.vimrc ~/.old-dotfiles
+mv ~/.zshrc ~/.old-dotfiles
+mv ~/.emacs ~/.old-dotfiles
+ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
+ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
+ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 
-# Change default shell to zsh
 chsh -s $(which zsh)
-
-# Install Oh My Zsh
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-rm ~/.zshrc.pre-oh-my-zsh
-ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 
 exit 0
