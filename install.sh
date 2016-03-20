@@ -73,4 +73,6 @@ ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-the
 
 chsh -s $(which zsh)
 
+vim +PluginInstall
+
 exit 0
