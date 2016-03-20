@@ -22,25 +22,28 @@ call vundle#begin()
 " Initialize the vundle plugin
 Plugin 'gmarik/Vundle.vim'
 
+" Older unused plugins
+" Plugin 'ervandew/supertab'
+" Plugin 'chrisbra/csv.vim'
+" Plugin 'ivanov/vim-ipython.git'
+" Plugin 'alfredodeza/pytest.vim'
+" Plugin 'klen/python-mode'
+
 Plugin 'sickill/vim-monokai'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
-" Plugin 'ervandew/supertab'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jpalardy/vim-slime'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Plugin 'chrisbra/csv.vim'
-" Plugin 'ivanov/vim-ipython.git'
-" Plugin 'alfredodeza/pytest.vim'
-" Plugin 'klen/python-mode'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 " ==========================================
