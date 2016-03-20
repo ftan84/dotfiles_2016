@@ -27,7 +27,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jpalardy/vim-slime'
@@ -40,6 +40,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'klen/python-mode'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 " ==========================================
