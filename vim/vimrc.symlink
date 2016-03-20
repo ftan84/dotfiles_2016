@@ -139,9 +139,6 @@ set noswapfile
 " Set to use mouse
 set mouse=a
 
-" Settings for the modules
-source ~/dotfiles/vim/module_settings
-
 " Printing options
 set popt=number:y
 
@@ -158,6 +155,8 @@ set cursorline
 " Change the character for vertical separation
 set fillchars+=vert:│
 
+" Settings for the modules
+source ~/dotfiles/vim/module_settings
 " =============================
 " Custom mappings
 " =============================
