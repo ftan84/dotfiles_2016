@@ -21,7 +21,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install tmux
     brew install python-dev
     brew install python3-dev
-    brew install build-essentials
+    brew install build-essential
     brew install cmake
 else
     sudo apt-get -y install wget
@@ -32,7 +32,7 @@ else
     sudo apt-get -y install tmux
     sudo apt-get -y install python-dev
     sudo apt-get -y install python3-dev
-    sudo apt-get -y install build-essentials
+    sudo apt-get -y install build-essential
     sudo apt-get -y install cmake
 fi
 
