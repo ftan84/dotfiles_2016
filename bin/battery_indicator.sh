@@ -6,18 +6,28 @@ HEART='♥ '
 if [[ `uname` == 'Linux' ]]; then
   current_charge=$(cat /proc/acpi/battery/BAT1/state | grep 'remaining capacity' | awk '{print $3}')
   total_charge=$(cat /proc/acpi/battery/BAT1/info | grep 'last full capacity' | awk '{print $4}')
+  echo -n '#[fg=colour196]'
+  echo -n $HEART
+  echo -n " "
+  echo $(acpi | awk '{print $4, $5}')
 else
   battery_info=`ioreg -rc AppleSmartBattery`
   current_charge=$(echo $battery_info | grep -o '"CurrentCapacity" = [0-9]\+' | awk '{print $3}')
   total_charge=$(echo $battery_info | grep -o '"MaxCapacity" = [0-9]\+' | awk '{print $3}')
   # percentage=$(echo ($current_charge/$total_charge)*10 | cut -d '.' -f 1)
   percentage=$(echo ($current_charge/$total_charge))
+
+  echo -n '#[fg=colour196]'
+  echo -n $HEART
+  echo -n " "
+  echo "((($current_charge/$total_charge)*100))" | bc -l | cut -d '.' -f 1
 fi
 
-echo -n '#[fg=colour196]'
-echo -n $HEART
-echo -n " "
-echo "((($current_charge/$total_charge)*100))" | bc -l | cut -d '.' -f 1
+# echo -n '#[fg=colour196]'
+# echo -n $HEART
+# echo -n " "
+# echo "((($current_charge/$total_charge)*100))" | bc -l | cut -d '.' -f 1
+
 # echo -n "$current_charge/$total_charge*100" | bc -l | cut -d '.' -f 1
 # charged_slots=$(echo "((($current_charge/$total_charge)*10)/3)+1" | bc -l | cut -d '.' -f 1)
 # if [[ $charged_slots -gt 3 ]]; then

@@ -34,6 +34,7 @@ else
     sudo apt-get -y install python3-dev
     sudo apt-get -y install build-essential
     sudo apt-get -y install cmake
+    sudo apt-get -y install acpi
 fi
 
 # Installing pip

@@ -1,4 +1,4 @@
-# Dotfiles 1.3.0
+# Dotfiles 1.4.0
 A set of environment setting dotfiles that are tuned to my personal preference.
 
 These dotfiles are really for my personal use. Much of the code can be credited
