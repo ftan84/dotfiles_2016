@@ -17,6 +17,18 @@ cd ~/dotfiles
 ./install.sh
 ```
 
+Once the install script finishes, run `vim +PluginInstall` to run the Vundle
+Plugin Installer.
+
+### YouCompleteMe Installation
+The YouCompleteMe vim plugin requires compilation. Change into its bundle
+directory (typically in ~/.vim/bundle) and run `./install.py`.
+
+```
+cd ~/.vim/bundle/YouCompleteMe
+./install.py
+```
+
 ## Credits
 
 [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles): Where my dotfiles drew inspiration from
