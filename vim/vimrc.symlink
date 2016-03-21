@@ -23,7 +23,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Older unused plugins
-" Plugin 'ervandew/supertab'
 " Plugin 'chrisbra/csv.vim'
 " Plugin 'ivanov/vim-ipython.git'
 " Plugin 'alfredodeza/pytest.vim'
@@ -44,6 +43,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nvie/vim-flake8'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 
 call vundle#end()
 " ==========================================
