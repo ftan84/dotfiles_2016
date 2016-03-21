@@ -28,6 +28,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'ivanov/vim-ipython.git'
 " Plugin 'alfredodeza/pytest.vim'
 " Plugin 'klen/python-mode'
+" Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'sickill/vim-monokai'
 Plugin 'morhetz/gruvbox'
@@ -42,7 +43,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'nvie/vim-flake8'
 
 call vundle#end()
