@@ -1,6 +1,6 @@
 # Changelog
 
-This project somewhat follows the [Semantic Version](http://semver.org) system with one difference, minor adjustments to formatting, user interface, plugins, etc will be considered a patch upgrade.
+This project somewhat follows the [Semantic Version](http://semver.org) system with one difference -- minor adjustments to formatting, user interface, plugins, etc are onsidered patch upgrades.
 
 ## 1.4.2 (2016-03-21)
 
