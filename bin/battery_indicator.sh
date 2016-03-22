@@ -9,7 +9,7 @@ if [[ `uname` == 'Linux' ]]; then
   echo -n '#[fg=colour196]'
   echo -n $HEART
   echo -n " "
-  echo $(acpi | awk '{print $4, $5}')
+  echo $(acpi | awk '{print $4}' | sed 's/,$//')
 else
   battery_info=`ioreg -rc AppleSmartBattery`
   current_charge=$(echo $battery_info | grep -o '"CurrentCapacity" = [0-9]\+' | awk '{print $3}')
