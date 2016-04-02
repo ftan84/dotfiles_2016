@@ -45,6 +45,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
+Plugin 'tmhedberg/SimpylFold'
 
 call vundle#end()
 " ==========================================
@@ -156,6 +157,7 @@ set cursorline
 
 " Change the highlight color
 :hi Visual guibg=Gray30 gui=None
+:hi Visual cterm=none ctermbg=238 ctermfg=none
 
 " Change the character for vertical separation
 set fillchars+=vert:│
@@ -210,3 +212,6 @@ nnoremap <Leader>lint :SyntasticCheck<CR> :Errors<CR>
 
 " Python mode remap
 " nnoremap <Leader>lint :PymodeLintAuto<CR>
+
+" SymplyFold config
+let g:SimpylFold_docstring_preview = 1
