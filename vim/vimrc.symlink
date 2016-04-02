@@ -157,6 +157,7 @@ set cursorline
 
 " Change the highlight color
 :hi Visual guibg=Gray30 gui=None
+:hi Visual cterm=none ctermbg=238 ctermfg=none
 
 " Change the character for vertical separation
 set fillchars+=vert:│
