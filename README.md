@@ -9,6 +9,8 @@ The install script should install everything needed for the environment to run p
 The only setup you need to make is to install [Powerline Fonts](https://github.com/powerline/fonts) so that Vim
 airline will render the glyphs properly
 
+This install script has been tested on Ubuntu 15.10 and Mac OS X El Capitan.
+
 ## Installation
 Change into the dotfiles directory and run the install.sh script.
 
