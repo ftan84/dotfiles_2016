@@ -44,9 +44,9 @@ fi
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 rm get-pip.py
-sudo pip install virtualenv
-sudo pip install --no-deps virtualenvwrapper
-sudo pip install --no-deps stevedore
+sudo -H pip install virtualenv
+sudo -H pip install --no-deps virtualenvwrapper
+sudo -H pip install --no-deps stevedore
 
 # Create vim directory for swap files
 mkdir -p ~/.vim-tmp
