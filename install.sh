@@ -24,6 +24,8 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install build-essential
     brew install cmake
 else
+    sudo apt-get update
+
     sudo apt-get -y install wget
     sudo apt-get -y install zsh
     sudo apt-get -y install tree
@@ -77,6 +79,16 @@ ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
+
+# Setting git defaults
+git config --global user.email "francis.adrian.tan@gmail.com"
+git config --global user.name "Francis Tan"
+git config --global push.default simple
+git config --global core.editor "vim"
+git config --global diff.tool vimdiff
+git config --global merge.tool vimdiff
+git config --global difftool.prompt false
+git config credential.helper 'cache --timeout=14400'  # 4 hour timeout
 
 chsh -s $(which zsh)
 
