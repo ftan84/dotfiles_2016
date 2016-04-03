@@ -1,4 +1,4 @@
-# Dotfiles 1.4.1
+# Dotfiles 1.4.2
 A set of environment setting dotfiles that are tuned to my personal preference.
 
 These dotfiles are really for my personal use. Much of the code can be credited
@@ -8,6 +8,8 @@ to [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles).
 The install script should install everything needed for the environment to run properly.
 The only setup you need to make is to install [Powerline Fonts](https://github.com/powerline/fonts) so that Vim
 airline will render the glyphs properly
+
+This install script has been tested on Ubuntu 15.10 and Mac OS X El Capitan.
 
 ## Installation
 Change into the dotfiles directory and run the install.sh script.
