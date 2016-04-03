@@ -88,6 +88,7 @@ git config --global core.editor "vim"
 git config --global diff.tool vimdiff
 git config --global merge.tool vimdiff
 git config --global difftool.prompt false
+git config credential.helper 'cache --timeout=14400'  # 4 hour timeout
 
 chsh -s $(which zsh)
 
