@@ -46,6 +46,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'jalvesaq/Nvim-R'
 
 call vundle#end()
 " ==========================================

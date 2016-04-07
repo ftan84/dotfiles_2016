@@ -24,6 +24,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install build-essential
     brew install cmake
 else
+    sudo add-apt-repository ppa:pkg-vim/vim-daily
     sudo apt-get update
     sudo apt-get upgrade
 
