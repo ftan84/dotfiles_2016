@@ -23,6 +23,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install python3-dev
     brew install build-essential
     brew install cmake
+    brew install r-base
 else
     sudo apt-get -y update
     sudo apt-get -y upgrade
@@ -38,6 +39,7 @@ else
     sudo apt-get -y install build-essential
     sudo apt-get -y install cmake
     sudo apt-get -y install acpi
+    sudo apt-get -y install r-base
 fi
 
 # Installing pip
