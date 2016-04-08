@@ -17,14 +17,14 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install zsh
     brew install tree
     brew install git-flow
-    brew install vim
+#    brew install vim
     brew install tmux
     brew install python-dev
     brew install python3-dev
     brew install build-essential
     brew install cmake
 else
-    sudo add-apt-repository ppa:pkg-vim/vim-daily
+#    sudo add-apt-repository ppa:pkg-vim/vim-daily
     sudo apt-get update
     sudo apt-get upgrade
 
@@ -32,14 +32,21 @@ else
     sudo apt-get -y install zsh
     sudo apt-get -y install tree
     sudo apt-get -y install git-flow
-    sudo apt-get -y install vim
+#    sudo apt-get -y install vim
     sudo apt-get -y install tmux
     sudo apt-get -y install python-dev
     sudo apt-get -y install python3-dev
     sudo apt-get -y install build-essential
     sudo apt-get -y install cmake
     sudo apt-get -y install acpi
+    sudo apt-get -y build-dep vim
 fi
+
+# Build latest vim
+git clone https://github.com/vim/vim ~/vim
+cd ~/vim/src
+make
+sudo make install
 
 # Installing pip
 wget https://bootstrap.pypa.io/get-pip.py
