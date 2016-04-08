@@ -23,6 +23,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install python3-dev
     brew install build-essential
     brew install cmake
+    brew install r-base
 else
 #    sudo add-apt-repository ppa:pkg-vim/vim-daily
     sudo apt-get update
@@ -39,6 +40,7 @@ else
     sudo apt-get -y install build-essential
     sudo apt-get -y install cmake
     sudo apt-get -y install acpi
+    sudo apt-get -y install r-base
     sudo apt-get -y build-dep vim
 fi
 
