@@ -26,7 +26,7 @@ if [ "$(uname)" == "Darwin" ]; then
 else
 #    sudo add-apt-repository ppa:pkg-vim/vim-daily
     sudo apt-get update
-    sudo apt-get upgrade
+    sudo apt-get -y upgrade
 
     sudo apt-get -y install wget
     sudo apt-get -y install zsh
