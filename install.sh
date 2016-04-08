@@ -45,6 +45,7 @@ fi
 # Build latest vim
 git clone https://github.com/vim/vim ~/vim
 cd ~/vim/src
+./configure --enable-pythoninterp
 make
 sudo make install
 
