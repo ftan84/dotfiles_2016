@@ -41,6 +41,8 @@ else
     sudo apt-get -y install cmake
     sudo apt-get -y install acpi
     sudo apt-get -y install r-base
+    sudo apt-get -y install libssl-dev
+    sudo apt-get -y install libcurl4-gnutls-dev
     sudo apt-get -y build-dep vim
 fi
 
@@ -91,6 +93,7 @@ ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
+ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 
 # Setting git defaults
 git config --global user.email "francis.adrian.tan@gmail.com"
