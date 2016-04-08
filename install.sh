@@ -42,6 +42,7 @@ else
     sudo apt-get -y install acpi
     sudo apt-get -y install r-base
     sudo apt-get -y install libssl-dev
+    sudo apt-get -y build-dep libcurl4-gnutls-dev
     sudo apt-get -y install libcurl4-gnutls-dev
     sudo apt-get -y build-dep vim
 fi
