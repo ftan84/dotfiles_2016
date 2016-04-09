@@ -4,7 +4,7 @@
 install.packages('devtools', repos='https://cran.cnr.berkeley.edu/')
 library(devtools)
 devtools::install_github("jalvesaq/colorout")
-devtools::install <- github("rstudio/rmarkdown")
+devtools::install_github("rstudio/rmarkdown")
 # install.packages('rmarkdown', repos='https://cran.cnr.berkeley.edu/')
 install.packages('ggplot2', repos='https://cran.cnr.berkeley.edu/')
 install.packages('xtable', repos='https://cran.cnr.berkeley.edu/')
