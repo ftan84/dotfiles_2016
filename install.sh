@@ -20,7 +20,6 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install zsh
     brew install tree
     brew install git-flow
-#    brew install vim
     brew install tmux
     brew install python-dev
     brew install python3-dev
@@ -29,7 +28,6 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install r-base
 else
     echo -e "\033[1mRunning Linux\033[0m"
-#    sudo add-apt-repository ppa:pkg-vim/vim-daily
     sudo apt-get update
     sudo apt-get -y upgrade
 
@@ -37,7 +35,6 @@ else
     sudo apt-get -y install zsh
     sudo apt-get -y install tree
     sudo apt-get -y install git-flow
-#    sudo apt-get -y install vim
     sudo apt-get -y install tmux
     sudo apt-get -y install python-dev
     sudo apt-get -y install python3-dev
@@ -128,6 +125,11 @@ git config --global diff.tool vimdiff
 git config --global merge.tool vimdiff
 git config --global difftool.prompt false
 git config credential.helper 'cache --timeout=14400'  # 4 hour timeout
+
+
+# Remove the vim directory after building
+rm -rf ~/vim
+cd ~
 
 
 # Set zsh as default
