@@ -4,10 +4,13 @@
 # according to my liking. Much of the code here was drawn from
 # nicknisi/dotfiles
 
-sudo echo "Installing dotfiles..."
+
+sudo echo "\033[1mInstalling dotfiles...\033[0m"
+
 
 # Check to see if we are running on OS X
 if [ "$(uname)" == "Darwin" ]; then
+    echo "\033[1mRunning OS X\033[0m"
     # Check to see if Homebrew is installed. Install otherwise
     if test ! $(which brew); then
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
@@ -25,6 +28,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install cmake
     brew install r-base
 else
+    echo "\033[1mRunning Linux\033[0m"
 #    sudo add-apt-repository ppa:pkg-vim/vim-daily
     sudo apt-get update
     sudo apt-get -y upgrade
@@ -47,17 +51,25 @@ else
     sudo apt-get -y build-dep vim
 fi
 
+
 # Build latest vim
+echo "\033[1mBuilding the latest Vim...\033[0m"
 git clone https://github.com/vim/vim ~/vim
 cd ~/vim/src
 ./configure --enable-pythoninterp
 make
 sudo make install
+# Create vim directory for swap files
+mkdir -p ~/.vim-tmp
+
 
 # Run R install script
+echo "\033[1mSetting up R environment...\033[0m"
 sudo Rscript ~/dotfiles/R/install.R
 
+
 # Installing pip
+echo "\033[1mInstalling pip...\033[0m"
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 rm get-pip.py
@@ -65,10 +77,9 @@ sudo -H pip install virtualenv
 sudo -H pip install --no-deps virtualenvwrapper
 sudo -H pip install --no-deps stevedore
 
-# Create vim directory for swap files
-mkdir -p ~/.vim-tmp
 
 # Install Vundle
+echo "\033[1mInstalling Vundle...\033[0m"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
 
 
@@ -80,10 +91,14 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vund
 # rm ~/.zshrc.pre-oh-my-zsh
 # ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 
+
 # Manual Install of Oh-My-Zsh
+echo "\033[1mInstalling Oh-My-Zsh...\033[0m"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
+
 # Symlinks
+echo "\033[1mCreating symlinks...\033[0m"
 # rm ~/.vimrc
 # rm ~/.zshrc
 # rm ~/.emacs
@@ -99,7 +114,9 @@ ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 
+
 # Setting git defaults
+echo "\033[1mSetting up sane git defaults...\033[0m"
 git config --global user.email "francis.adrian.tan@gmail.com"
 git config --global user.name "Francis Tan"
 git config --global push.default simple
@@ -109,6 +126,9 @@ git config --global merge.tool vimdiff
 git config --global difftool.prompt false
 git config credential.helper 'cache --timeout=14400'  # 4 hour timeout
 
+
+# Set zsh as default
+echo "\033[1mSetting ZSH as default shell...\033[0m"
 chsh -s $(which zsh)
 
 exit 0
