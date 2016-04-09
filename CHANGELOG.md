@@ -2,6 +2,13 @@
 
 This project somewhat follows the [Semantic Version](http://semver.org) system with one difference -- minor adjustments to formatting, user interface, plugins, etc are onsidered patch upgrades.
 
+## 1.5.0 (2016-04-09)
+- Major update -- added support for R
+- Install script now builds latest version of Vim
+- Added plugin for R integration in Vim
+- Add an R install script to set up the R environment which installs devtools and colorout
+- Added .Rprofile to run initiallization every time R starts
+
 ## 1.4.2 (2016-04-02)
 - Added my git defaults to install script
 
