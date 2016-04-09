@@ -54,6 +54,9 @@ cd ~/vim/src
 make
 sudo make install
 
+# Run R install script
+sudo Rscript ~/dotfiles/R/install.R
+
 # Installing pip
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
