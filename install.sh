@@ -4,10 +4,13 @@
 # according to my liking. Much of the code here was drawn from
 # nicknisi/dotfiles
 
-sudo echo "Installing dotfiles..."
+
+sudo echo -e "\033[1mInstalling dotfiles...\033[0m"
+
 
 # Check to see if we are running on OS X
 if [ "$(uname)" == "Darwin" ]; then
+    echo -e "\033[1mRunning OS X\033[0m"
     # Check to see if Homebrew is installed. Install otherwise
     if test ! $(which brew); then
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
@@ -17,7 +20,6 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install zsh
     brew install tree
     brew install git-flow
-    brew install vim
     brew install tmux
     brew install python-dev
     brew install python3-dev
@@ -25,14 +27,14 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install cmake
     brew install r-base
 else
-    sudo apt-get -y update
+    echo -e "\033[1mRunning Linux\033[0m"
+    sudo apt-get update
     sudo apt-get -y upgrade
 
     sudo apt-get -y install wget
     sudo apt-get -y install zsh
     sudo apt-get -y install tree
     sudo apt-get -y install git-flow
-    sudo apt-get -y install vim
     sudo apt-get -y install tmux
     sudo apt-get -y install python-dev
     sudo apt-get -y install python3-dev
@@ -40,20 +42,44 @@ else
     sudo apt-get -y install cmake
     sudo apt-get -y install acpi
     sudo apt-get -y install r-base
+    sudo apt-get -y install libssl-dev
+    sudo apt-get -y build-dep libcurl4-gnutls-dev
+    sudo apt-get -y install libcurl4-gnutls-dev
+    sudo apt-get -y build-dep vim
+    sudo apt-get -y install pandoc
+    sudo apt-get -y install texlive-full
+    # sudo apt-get -y install texlive-pictures
 fi
 
-# Installing pip
-wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
-rm get-pip.py
-sudo pip install virtualenv
-sudo pip install --no-deps virtualenvwrapper
-sudo pip install --no-deps stevedore
 
+# Build latest vim
+echo -e "\033[1mBuilding the latest Vim...\033[0m"
+git clone https://github.com/vim/vim ~/vim
+cd ~/vim/src
+./configure --enable-pythoninterp
+make
+sudo make install
 # Create vim directory for swap files
 mkdir -p ~/.vim-tmp
 
+
+# Run R install script
+echo -e "\033[1mSetting up R environment...\033[0m"
+sudo Rscript ~/dotfiles/R/install.R
+
+
+# Installing pip
+echo -e "\033[1mInstalling pip...\033[0m"
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+rm get-pip.py
+sudo -H pip install virtualenv
+sudo -H pip install --no-deps virtualenvwrapper
+sudo -H pip install --no-deps stevedore
+
+
 # Install Vundle
+echo -e "\033[1mInstalling Vundle...\033[0m"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
 
 
@@ -65,10 +91,14 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vund
 # rm ~/.zshrc.pre-oh-my-zsh
 # ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 
+
 # Manual Install of Oh-My-Zsh
+echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
+
 # Symlinks
+echo -e "\033[1mCreating symlinks...\033[0m"
 # rm ~/.vimrc
 # rm ~/.zshrc
 # rm ~/.emacs
@@ -82,8 +112,11 @@ ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
+ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
+
 
 # Setting git defaults
+echo -e "\033[1mSetting up sane git defaults...\033[0m"
 git config --global user.email "francis.adrian.tan@gmail.com"
 git config --global user.name "Francis Tan"
 git config --global push.default simple
@@ -93,6 +126,14 @@ git config --global merge.tool vimdiff
 git config --global difftool.prompt false
 git config credential.helper 'cache --timeout=14400'  # 4 hour timeout
 
+
+# Remove the vim directory after building
+rm -rf ~/vim
+cd ~
+
+
+# Set zsh as default
+echo -e "\033[1mSetting ZSH as default shell...\033[0m"
 chsh -s $(which zsh)
 
 exit 0
