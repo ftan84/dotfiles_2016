@@ -56,8 +56,6 @@ cd ~/vim/src
 ./configure --enable-pythoninterp
 make
 sudo make install
-# Remove the vim directory after building
-rm -rf ~/vim
 # Create vim directory for swap files
 mkdir -p ~/.vim-tmp
 
@@ -124,6 +122,10 @@ git config --global diff.tool vimdiff
 git config --global merge.tool vimdiff
 git config --global difftool.prompt false
 git config credential.helper 'cache --timeout=14400'  # 4 hour timeout
+
+
+# Remove the vim directory after building
+rm -rf ~/vim
 
 
 # Set zsh as default
