@@ -1,4 +1,4 @@
-# Dotfiles 1.4.2
+# Dotfiles 1.5.0
 A set of environment setting dotfiles that are tuned to my personal preference.
 
 These dotfiles are really for my personal use. Much of the code can be credited
@@ -7,7 +7,10 @@ to [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles).
 ## Requirements
 The install script should install everything needed for the environment to run properly.
 The only setup you need to make is to install [Powerline Fonts](https://github.com/powerline/fonts) so that Vim
-airline will render the glyphs properly
+airline will render the glyphs properly.
+
+If using R and your host machine is OS X, then you need to install
+[XQuartz](http://www.xquartz.org) to render plots properly.
 
 This install script has been tested on Ubuntu 15.10 and Mac OS X El Capitan.
 
