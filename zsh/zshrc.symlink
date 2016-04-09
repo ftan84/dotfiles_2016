@@ -108,3 +108,6 @@ alias multitail="multitail -cS python-log"
 
 # Alias for tmux
 alias tm="tmux new-session -s"
+
+# Run tmux when you log in
+tm yoda

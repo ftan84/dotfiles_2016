@@ -46,6 +46,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'jalvesaq/Nvim-R'
 
 call vundle#end()
 " ==========================================
@@ -215,3 +216,9 @@ nnoremap <Leader>lint :SyntasticCheck<CR> :Errors<CR>
 
 " SymplyFold config
 let g:SimpylFold_docstring_preview = 1
+
+" nvim-r
+let R_in_buffer = 0
+let R_applescript = 0
+let R_tmux_split = 1
+let R_vsplit = 1
