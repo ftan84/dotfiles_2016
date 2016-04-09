@@ -49,6 +49,9 @@ else
     sudo apt-get -y build-dep libcurl4-gnutls-dev
     sudo apt-get -y install libcurl4-gnutls-dev
     sudo apt-get -y build-dep vim
+    sudo apt-get -y install pandoc
+    sudo apt-get -y install texlive-full
+    # sudo apt-get -y install texlive-pictures
 fi
 
 
