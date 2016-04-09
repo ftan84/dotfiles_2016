@@ -126,6 +126,7 @@ git config credential.helper 'cache --timeout=14400'  # 4 hour timeout
 
 # Remove the vim directory after building
 rm -rf ~/vim
+cd ~
 
 
 # Set zsh as default
