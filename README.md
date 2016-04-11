@@ -1,4 +1,4 @@
-# Dotfiles 1.5.0
+# Dotfiles 1.5.1
 A set of environment setting dotfiles that are tuned to my personal preference.
 
 These dotfiles are really for my personal use. Much of the code can be credited
@@ -26,6 +26,10 @@ Once the install script finishes, run `vim +PluginInstall` to run the Vundle
 Plugin Installer.
 
 ### YouCompleteMe Installation
+My current Vim setup does not utilize the plugin, YouCompleteMe, but instead
+uses Jedi + Supertab. However, in case you decide to use YCM instead, please
+follow the instructions below.
+
 The YouCompleteMe vim plugin requires compilation. Change into its bundle
 directory (typically in ~/.vim/bundle) and run `./install.py`.
 
