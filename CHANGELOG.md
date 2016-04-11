@@ -1,19 +1,26 @@
 # Changelog
 
-This project somewhat follows the [Semantic Version](http://semver.org) system with one difference -- minor adjustments to formatting, user interface, plugins, etc are onsidered patch upgrades.
+This project somewhat follows the [Semantic Version](http://semver.org)
+system with one difference -- minor adjustments to formatting, user interface,
+plugins, etc are onsidered patch upgrades.
+
+## 1.5.1 (2016-04-11)
+- Fixed permission issues for the R plugin, Nvim-r, to work properly
+- Updated README. Current vim set up no longer uses the YouCompleteMe plugin
 
 ## 1.5.0 (2016-04-09)
 - Major update -- added support for R
 - Install script now builds latest version of Vim
 - Added plugin for R integration in Vim
-- Add an R install script to set up the R environment which installs devtools and colorout
+- Add an R install script to set up the R environment which installs devtools
+and colorout
 - Added .Rprofile to run initiallization every time R starts
 
 ## 1.4.2 (2016-04-02)
 - Added my git defaults to install script
 
 ## 1.4.1 (2016-03-21)
-
 Patch:
 - Added hostname to bottom right of tmux status line
-- Removed time left from tmux battery indicator section when in linux environments
+- Removed time left from tmux battery indicator section when in linux
+environments
