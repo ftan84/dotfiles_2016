@@ -13,7 +13,7 @@ if [ "$(uname)" == "Darwin" ]; then
     echo -e "\033[1mRunning OS X\033[0m"
     # Check to see if Homebrew is installed. Install otherwise
     if test ! $(which brew); then
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 
     brew install wget
@@ -31,36 +31,57 @@ else
     sudo apt-get update
     sudo apt-get -y upgrade
 
-    sudo apt-get -y install wget
-    sudo apt-get -y install zsh
-    sudo apt-get -y install tree
-    sudo apt-get -y install git-flow
-    sudo apt-get -y install tmux
-    sudo apt-get -y install python-dev
-    sudo apt-get -y install python3-dev
-    sudo apt-get -y install build-essential
-    sudo apt-get -y install cmake
-    sudo apt-get -y install acpi
-    sudo apt-get -y install r-base
-    sudo apt-get -y install libssl-dev
-    sudo apt-get -y build-dep libcurl4-gnutls-dev
-    sudo apt-get -y install libcurl4-gnutls-dev
-    sudo apt-get -y build-dep vim
-    sudo apt-get -y install pandoc
-    sudo apt-get -y install texlive-full
-    # sudo apt-get -y install texlive-pictures
+    # sudo apt-get -y install wget
+    # sudo apt-get -y install zsh
+    # sudo apt-get -y install tree
+    # sudo apt-get -y install git-flow
+    # sudo apt-get -y install tmux
+    # sudo apt-get -y install python-dev
+    # sudo apt-get -y install python3-dev
+    # sudo apt-get -y install build-essential
+    # sudo apt-get -y install cmake
+    # sudo apt-get -y install acpi
+    # sudo apt-get -y install r-base
+    # sudo apt-get -y install libssl-dev
+    # sudo apt-get -y build-dep libcurl4-gnutls-dev
+    # sudo apt-get -y install libcurl4-gnutls-dev
+    # sudo apt-get -y build-dep vim
+    # sudo apt-get -y install pandoc
+    # sudo apt-get -y install texlive-full
+
+    sudo apt-get -y build-dep \
+        libcurl4-gnutls-dev \
+        vim
+    sudo apt-get -y install \
+        wget \
+        zsh \
+        tree \
+        git-flow \
+        tmux \
+        python-dev \
+        python3-dev \
+        build-essential \
+        cmake \
+        acpi \
+        r-base \
+        libssl-dev \
+        libcurl4-gnutls-dev \
+        pandoc \
+        texlive-full
 fi
 
 
 # Build latest vim
-echo -e "\033[1mBuilding the latest Vim...\033[0m"
-git clone https://github.com/vim/vim ~/vim
-cd ~/vim/src
-./configure --enable-pythoninterp
-make
-sudo make install
-# Create vim directory for swap files
-mkdir -p ~/.vim-tmp
+if ! hash vim 2>/dev/null; then
+    echo -e "\033[1mBuilding the latest Vim...\033[0m"
+    git clone https://github.com/vim/vim ~/viminstaller
+    cd ~/viminstaller/src
+    ./configure --enable-pythoninterp
+    make
+    sudo make install
+    # Create vim directory for swap files
+    mkdir -p ~/.vim-tmp
+fi
 
 
 # Run R install script
@@ -69,18 +90,25 @@ sudo Rscript ~/dotfiles/R/install.R
 
 
 # Installing pip
-echo -e "\033[1mInstalling pip...\033[0m"
-wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
-rm get-pip.py
-sudo -H pip install virtualenv
-sudo -H pip install --no-deps virtualenvwrapper
-sudo -H pip install --no-deps stevedore
+if ! hash pip 2>/dev/null; then
+    echo -e "\033[1mInstalling pip...\033[0m"
+    wget https://bootstrap.pypa.io/get-pip.py
+    sudo python get-pip.py
+    rm get-pip.py
+    sudo -H pip install virtualenv
+    sudo -H pip install --no-deps virtualenvwrapper
+    sudo -H pip install --no-deps stevedore
+fi
 
 
 # Install Vundle
-echo -e "\033[1mInstalling Vundle...\033[0m"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+cd ~
+if [ -e './dotfiles/vim/bundle/Vundle.vim' ]; then
+    echo -e "\033[1mVundle already installed. Skipping\033[0m"
+else
+    echo -e "\033[1mInstalling Vundle...\033[0m"
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+fi
 
 
 # Change default shell to zsh
@@ -93,8 +121,13 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vund
 
 
 # Manual Install of Oh-My-Zsh
-echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cd ~
+if [ -d '.oh-my-zsh' ]; then
+    echo -e "\033[1mOh-My-Zsh already installed. Skipping\033[0m"
+else
+    echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
 
 
 # Symlinks
@@ -102,10 +135,19 @@ echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
 # rm ~/.vimrc
 # rm ~/.zshrc
 # rm ~/.emacs
-mkdir ~/.old-dotfiles
-mv ~/.vimrc ~/.old-dotfiles
-mv ~/.zshrc ~/.old-dotfiles
-mv ~/.emacs ~/.old-dotfiles
+cd ~
+if [ ! -d './.old-dotfiles' ]; then
+    mkdir ~/.old-dotfiles/
+fi
+if [ -e '.vimrc' ]; then
+    mv ~/.vimrc ~/.old-dotfiles
+fi
+if [ -e '.zshrc' ]; then
+    mv ~/.zshrc ~/.old-dotfiles
+fi
+if [ -e '.emacs' ]; then
+    mv ~/.emacs ~/.old-dotfiles
+fi
 ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
@@ -130,12 +172,19 @@ git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
 
 
 # Remove the vim directory after building
-rm -rf ~/vim
+cd ~
+if [ -d 'viminstaller' ]; then
+    rm -rf ~/viminstaller
+fi
 cd ~
 
 
 # Set zsh as default
-echo -e "\033[1mSetting ZSH as default shell...\033[0m"
-chsh -s $(which zsh)
+if [ $SHELL == '/usr/bin/zsh' ]; then
+    echo -e "\033[1mZSH is already the default shell. Skipping\033[0m"
+else
+    echo -e "\033[1mSetting ZSH as default shell...\033[0m"
+    chsh -s $(which zsh)
+fi
 
 exit 0
