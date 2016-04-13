@@ -155,7 +155,7 @@ ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
-chmod a+w /usr/local/lib/R/site-library
+sudo chmod a+w /usr/local/lib/R/site-library
 
 
 # Setting git defaults
