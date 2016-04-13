@@ -93,8 +93,13 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vund
 
 
 # Manual Install of Oh-My-Zsh
-echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cd ~
+if [ -d '.oh-my-zsh' ]; then
+    echo -e "\033[1mOh-My-Zsh already installed. Skipping\033[0m"
+else
+    echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
 
 
 # Symlinks
@@ -103,9 +108,15 @@ echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
 # rm ~/.zshrc
 # rm ~/.emacs
 mkdir ~/.old-dotfiles
-mv ~/.vimrc ~/.old-dotfiles
-mv ~/.zshrc ~/.old-dotfiles
-mv ~/.emacs ~/.old-dotfiles
+if [ -e '.vimrc' ]; then
+    mv ~/.vimrc ~/.old-dotfiles
+fi
+if [ -e '.zshrc' ]; then
+    mv ~/.zshrc ~/.old-dotfiles
+fi
+if [-e '.emacs' ]; then
+    mv ~/.emacs ~/.old-dotfiles
+fi
 ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
@@ -136,7 +147,7 @@ cd ~
 
 # Set zsh as default
 if [ $SHELL == '/usr/bin/zsh' ]; then
-    echo -e "\032[1mZSH is already the default shell.\033[0m"
+    echo -e "\033[1mZSH is already the default shell. Skipping\033[0m"
 else
     echo -e "\033[1mSetting ZSH as default shell...\033[0m"
     chsh -s $(which zsh)
