@@ -54,8 +54,8 @@ fi
 
 # Build latest vim
 echo -e "\033[1mBuilding the latest Vim...\033[0m"
-git clone https://github.com/vim/vim ~/vim
-cd ~/vim/src
+git clone https://github.com/vim/vim ~/viminstaller
+cd ~/viminstaller/src
 ./configure --enable-pythoninterp
 make
 sudo make install
@@ -141,7 +141,10 @@ git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
 
 
 # Remove the vim directory after building
-rm -rf ~/vim
+cd ~
+if [ -d 'viminstaller' ]; then
+    rm -rf ~/viminstaller
+fi
 cd ~
 
 
