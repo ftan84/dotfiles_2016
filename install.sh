@@ -53,14 +53,16 @@ fi
 
 
 # Build latest vim
-echo -e "\033[1mBuilding the latest Vim...\033[0m"
-git clone https://github.com/vim/vim ~/viminstaller
-cd ~/viminstaller/src
-./configure --enable-pythoninterp
-make
-sudo make install
-# Create vim directory for swap files
-mkdir -p ~/.vim-tmp
+if ! hash vim 2>/dev/null; then
+    echo -e "\033[1mBuilding the latest Vim...\033[0m"
+    git clone https://github.com/vim/vim ~/viminstaller
+    cd ~/viminstaller/src
+    ./configure --enable-pythoninterp
+    make
+    sudo make install
+    # Create vim directory for swap files
+    mkdir -p ~/.vim-tmp
+fi
 
 
 # Run R install script
@@ -69,18 +71,24 @@ sudo Rscript ~/dotfiles/R/install.R
 
 
 # Installing pip
-echo -e "\033[1mInstalling pip...\033[0m"
-wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
-rm get-pip.py
-sudo -H pip install virtualenv
-sudo -H pip install --no-deps virtualenvwrapper
-sudo -H pip install --no-deps stevedore
+if ! hash pip 2>/dev/null; then
+    echo -e "\033[1mInstalling pip...\033[0m"
+    wget https://bootstrap.pypa.io/get-pip.py
+    sudo python get-pip.py
+    rm get-pip.py
+    sudo -H pip install virtualenv
+    sudo -H pip install --no-deps virtualenvwrapper
+    sudo -H pip install --no-deps stevedore
+fi
 
 
 # Install Vundle
-echo -e "\033[1mInstalling Vundle...\033[0m"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+if [ -d '~/dotfiles/vim/bundle/Vundle.vim' ]; then
+    echo -e "\033[1mVundle already installed. Skipping\033[0m"
+else
+    echo -e "\033[1mInstalling Vundle...\033[0m"
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+fi
 
 
 # Change default shell to zsh
