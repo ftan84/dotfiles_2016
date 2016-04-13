@@ -135,7 +135,11 @@ cd ~
 
 
 # Set zsh as default
-echo -e "\033[1mSetting ZSH as default shell...\033[0m"
-chsh -s $(which zsh)
+if [ $SHELL == '/usr/bin/zsh' ]; then
+    echo -e "\032[1mZSH is already the default shell.\033[0m"
+else
+    echo -e "\033[1mSetting ZSH as default shell...\033[0m"
+    chsh -s $(which zsh)
+fi
 
 exit 0
