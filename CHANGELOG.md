@@ -24,7 +24,6 @@ and colorout
 - Added my git defaults to install script
 
 ## 1.4.1 (2016-03-21)
-Patch:
 - Added hostname to bottom right of tmux status line
 - Removed time left from tmux battery indicator section when in linux
 environments
