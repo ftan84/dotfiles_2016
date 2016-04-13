@@ -13,7 +13,7 @@ if [ "$(uname)" == "Darwin" ]; then
     echo -e "\033[1mRunning OS X\033[0m"
     # Check to see if Homebrew is installed. Install otherwise
     if test ! $(which brew); then
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 
     brew install wget
@@ -31,24 +31,43 @@ else
     sudo apt-get update
     sudo apt-get -y upgrade
 
-    sudo apt-get -y install wget
-    sudo apt-get -y install zsh
-    sudo apt-get -y install tree
-    sudo apt-get -y install git-flow
-    sudo apt-get -y install tmux
-    sudo apt-get -y install python-dev
-    sudo apt-get -y install python3-dev
-    sudo apt-get -y install build-essential
-    sudo apt-get -y install cmake
-    sudo apt-get -y install acpi
-    sudo apt-get -y install r-base
-    sudo apt-get -y install libssl-dev
-    sudo apt-get -y build-dep libcurl4-gnutls-dev
-    sudo apt-get -y install libcurl4-gnutls-dev
-    sudo apt-get -y build-dep vim
-    sudo apt-get -y install pandoc
-    sudo apt-get -y install texlive-full
-    # sudo apt-get -y install texlive-pictures
+    # sudo apt-get -y install wget
+    # sudo apt-get -y install zsh
+    # sudo apt-get -y install tree
+    # sudo apt-get -y install git-flow
+    # sudo apt-get -y install tmux
+    # sudo apt-get -y install python-dev
+    # sudo apt-get -y install python3-dev
+    # sudo apt-get -y install build-essential
+    # sudo apt-get -y install cmake
+    # sudo apt-get -y install acpi
+    # sudo apt-get -y install r-base
+    # sudo apt-get -y install libssl-dev
+    # sudo apt-get -y build-dep libcurl4-gnutls-dev
+    # sudo apt-get -y install libcurl4-gnutls-dev
+    # sudo apt-get -y build-dep vim
+    # sudo apt-get -y install pandoc
+    # sudo apt-get -y install texlive-full
+
+    sudo apt-get -y build-dep \
+        libcurl4-gnutls-dev \
+        vim
+    sudo apt-get -y install \
+        wget \
+        zsh \
+        tree \
+        git-flow \
+        tmux \
+        python-dev \
+        python3-dev \
+        build-essential \
+        cmake \
+        acpi \
+        r-base \
+        libssl-dev \
+        libcurl4-gnutls-dev \
+        pandoc \
+        texlive-full
 fi
 
 
@@ -83,7 +102,8 @@ fi
 
 
 # Install Vundle
-if [ -d '~/dotfiles/vim/bundle/Vundle.vim' ]; then
+cd ~
+if [ -e './dotfiles/vim/bundle/Vundle.vim' ]; then
     echo -e "\033[1mVundle already installed. Skipping\033[0m"
 else
     echo -e "\033[1mInstalling Vundle...\033[0m"
@@ -115,14 +135,17 @@ echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
 # rm ~/.vimrc
 # rm ~/.zshrc
 # rm ~/.emacs
-mkdir ~/.old-dotfiles
+cd ~
+if [ ! -d './.old-dotfiles' ]; then
+    mkdir ~/.old-dotfiles/
+fi
 if [ -e '.vimrc' ]; then
     mv ~/.vimrc ~/.old-dotfiles
 fi
 if [ -e '.zshrc' ]; then
     mv ~/.zshrc ~/.old-dotfiles
 fi
-if [-e '.emacs' ]; then
+if [ -e '.emacs' ]; then
     mv ~/.emacs ~/.old-dotfiles
 fi
 ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
