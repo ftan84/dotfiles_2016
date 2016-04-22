@@ -49,10 +49,10 @@ else
     # sudo apt-get -y install pandoc
     # sudo apt-get -y install texlive-full
 
-    sudo apt-get -y build-dep \
+    sudo apt -y build-dep \
         libcurl4-gnutls-dev \
         vim
-    sudo apt-get -y install \
+    sudo apt -y install \
         wget \
         zsh \
         tree \
