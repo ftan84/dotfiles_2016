@@ -1,11 +1,18 @@
 # This is the install script for a good R setup
 
-packagelist <- c('devtools', 'ggplot2', 'dplyr', 'xtable', 'ggthemes')
+packagelist <- c('devtools',
+                 'ggplot2',
+                 'dplyr',
+                 'xtable',
+                 'ggthemes',
+                 'tufte')
 newpackages <- packagelist[!(packagelist %in% installed.packages()[,'Package'])]
 if (length(newpackages)) {
-    install.packages(newpackages, repos='https://cran.cnr.berkeley.edu/')
+    install.packages(newpackages,
+                     type='source',
+                     repos='https://cran.cnr.berkeley.edu/')
 }
-install.packages('tufte', type = 'source', repos='https://cran.cnr.berkeley.edu/')
+# install.packages('tufte', type = 'source', repos='https://cran.cnr.berkeley.edu/')
 
 # Installs colorout
 # install.packages('devtools', repos='https://cran.cnr.berkeley.edu/')

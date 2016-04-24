@@ -28,8 +28,8 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install r-base
 else
     echo -e "\033[1mRunning Linux\033[0m"
-    sudo apt-get update
-    sudo apt-get -y upgrade
+    sudo apt update
+    sudo apt -y upgrade
 
     # sudo apt-get -y install wget
     # sudo apt-get -y install zsh
@@ -49,10 +49,10 @@ else
     # sudo apt-get -y install pandoc
     # sudo apt-get -y install texlive-full
 
-    sudo apt-get -y build-dep \
+    sudo apt -y build-dep \
         libcurl4-gnutls-dev \
         vim
-    sudo apt-get -y install \
+    sudo apt -y install \
         wget \
         zsh \
         tree \
@@ -72,16 +72,24 @@ fi
 
 
 # Build latest vim
-if ! hash vim 2>/dev/null; then
-    echo -e "\033[1mBuilding the latest Vim...\033[0m"
-    git clone https://github.com/vim/vim ~/viminstaller
-    cd ~/viminstaller/src
-    ./configure --enable-pythoninterp
-    make
-    sudo make install
-    # Create vim directory for swap files
-    mkdir -p ~/.vim-tmp
-fi
+# if ! hash vim 2>/dev/null; then
+#     echo -e "\033[1mBuilding the latest Vim...\033[0m"
+#     git clone https://github.com/vim/vim ~/viminstaller
+#     cd ~/viminstaller/src
+#     ./configure --enable-pythoninterp
+#     make
+#     sudo make install
+#     # Create vim directory for swap files
+#     mkdir -p ~/.vim-tmp
+# fi
+echo -e "\033[1mBuilding the latest Vim...\033[0m"
+git clone https://github.com/vim/vim ~/viminstaller
+cd ~/viminstaller/src
+./configure --enable-pythoninterp
+make
+sudo make install
+# Create vim directory for swap files
+mkdir -p ~/.vim-tmp
 
 
 # Run R install script
@@ -155,7 +163,7 @@ ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
-chmod a+w /usr/local/lib/R/site-library
+sudo chmod a+w /usr/local/lib/R/site-library
 
 
 # Setting git defaults
