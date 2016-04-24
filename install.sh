@@ -28,8 +28,8 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install r-base
 else
     echo -e "\033[1mRunning Linux\033[0m"
-    sudo apt-get update
-    sudo apt-get -y upgrade
+    sudo apt update
+    sudo apt -y upgrade
 
     # sudo apt-get -y install wget
     # sudo apt-get -y install zsh
