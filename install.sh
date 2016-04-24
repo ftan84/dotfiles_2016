@@ -72,16 +72,24 @@ fi
 
 
 # Build latest vim
-if ! hash vim 2>/dev/null; then
-    echo -e "\033[1mBuilding the latest Vim...\033[0m"
-    git clone https://github.com/vim/vim ~/viminstaller
-    cd ~/viminstaller/src
-    ./configure --enable-pythoninterp
-    make
-    sudo make install
-    # Create vim directory for swap files
-    mkdir -p ~/.vim-tmp
-fi
+# if ! hash vim 2>/dev/null; then
+#     echo -e "\033[1mBuilding the latest Vim...\033[0m"
+#     git clone https://github.com/vim/vim ~/viminstaller
+#     cd ~/viminstaller/src
+#     ./configure --enable-pythoninterp
+#     make
+#     sudo make install
+#     # Create vim directory for swap files
+#     mkdir -p ~/.vim-tmp
+# fi
+echo -e "\033[1mBuilding the latest Vim...\033[0m"
+git clone https://github.com/vim/vim ~/viminstaller
+cd ~/viminstaller/src
+./configure --enable-pythoninterp
+make
+sudo make install
+# Create vim directory for swap files
+mkdir -p ~/.vim-tmp
 
 
 # Run R install script
