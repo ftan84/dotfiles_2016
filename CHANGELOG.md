@@ -4,6 +4,9 @@ This project somewhat follows the [Semantic Version](http://semver.org)
 system with one difference -- minor adjustments to formatting, user interface,
 plugins, etc are onsidered patch upgrades.
 
+## 1.6.0 (2016-05-15)
+- Added support for mutt
+
 ## 1.5.3 (2016-04-24)
 - Removed the conditional that checks if vim is previously installed. Installer
 script will now install vim every time
