@@ -1,4 +1,16 @@
-source ~/dotfiles/mutt/credentials
+# set from = "your_email@gmail.com"
+# set imap_user       = "your_email@gmail.com"
+# set imap_pass       = "your_password"
+# set smtp_url        = "smtp://your_email@smtp.gmail.com:587/"
+# set smtp_pass       = "your_password"
+# set imap_keepalive = 900
+#
+# ## General mutt settings file
+# set realname        = "Your Real Name"
+# set charset         = "utf-8"
+
+# Point to a file with your credential info like above
+source ~/.mutt/credentials
 
 # REMOTE GMAIL FOLDERS
 set folder = 'imaps://imap.gmail.com:993'
