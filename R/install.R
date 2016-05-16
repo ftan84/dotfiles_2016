@@ -10,7 +10,7 @@ newpackages <- packagelist[!(packagelist %in% installed.packages()[,'Package'])]
 if (length(newpackages)) {
     install.packages(newpackages,
                      type='source',
-                     repos='https://cran.cnr.berkeley.edu/')
+                     repos='http://cran.cnr.berkeley.edu/')
 }
 # install.packages('tufte', type = 'source', repos='https://cran.cnr.berkeley.edu/')
 
