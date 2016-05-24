@@ -49,7 +49,7 @@ else
     # sudo apt-get -y install pandoc
     # sudo apt-get -y install texlive-full
 
-    sudo apt build-dep \
+    sudo apt-get -y build-dep \
         libcurl4-gnutls-dev \
         vim
     sudo apt -y install \
