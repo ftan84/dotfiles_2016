@@ -67,6 +67,7 @@ else
         libssl-dev \
         libcurl4-gnutls-dev \
         pandoc \
+        pandoc-citeproc \
         texlive-full
 fi
 
