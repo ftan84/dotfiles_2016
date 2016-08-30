@@ -70,6 +70,8 @@ git flow hotfix start HOTFIX
 git flow hotfix finish HOTFIX
 ```
 
+## Appendix
+
 ### YouCompleteMe Installation
 My current Vim setup does not utilize the plugin, YouCompleteMe, but instead
 uses Jedi + Supertab. However, in case you decide to use YCM instead, please
