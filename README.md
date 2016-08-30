@@ -26,6 +26,12 @@ Once the install script finishes, run `vim +PluginInstall` to run the Vundle
 Plugin Installer.
 
 ## Usage
+### Fugitive (Git Vim module)
+#### Git status
+```
+<leader>git
+```
+
 ### Git Flow
 [Infographic Cheat Sheet](http://danielkummer.github.io/git-flow-cheatsheet/)
 
