@@ -4,6 +4,9 @@ This project somewhat follows the [Semantic Version](http://semver.org)
 system with one difference -- minor adjustments to formatting, user interface,
 plugins, etc are onsidered patch upgrades.
 
+## 1.7.0 (2016-08-30)
+- Added *Usage* and *Appendix* sections in readme
+
 ## 1.6.0 (2016-05-15)
 - Added support for mutt
 
