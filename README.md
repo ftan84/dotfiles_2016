@@ -28,9 +28,17 @@ Plugin Installer.
 ## Usage
 ### Fugitive (Git Vim module)
 #### Git status
+To bring up git status:
 ```
 <leader>git
 ```
+Move cursor to modified file and press the *-* (dash) key to move to staging.
+Press *cc* to commit. Type your commit message, then save and quit.
+
+#### Push to origin
+```
+<leader>push
+````
 
 ### Git Flow
 [Infographic Cheat Sheet](http://danielkummer.github.io/git-flow-cheatsheet/)
