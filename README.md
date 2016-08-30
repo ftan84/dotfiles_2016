@@ -25,6 +25,19 @@ cd ~/dotfiles
 Once the install script finishes, run `vim +PluginInstall` to run the Vundle
 Plugin Installer.
 
+## Usage
+
+### Git Flow Cheat Sheet
+#### Features
+##### Start a new feature
+```
+git flow feature start MYFEATURE
+```
+##### Publish a feature
+```
+git flow feature publish MYFEATURE
+```
+
 ### YouCompleteMe Installation
 My current Vim setup does not utilize the plugin, YouCompleteMe, but instead
 uses Jedi + Supertab. However, in case you decide to use YCM instead, please
