@@ -48,39 +48,66 @@ git flow init
 ```
 
 #### Features
-##### Start and publish a feature
+Start and publish a feature:
 ```
 git flow feature start MYFEATURE
 git flow feature publish MYFEATURE
 ```
 
-##### Finish a feature
+Finish a feature:
 ```
 git flow feature finish MYFEATURE
 ```
 
 #### Releases
-##### Start and publish a release
+Start and publish a release:
 ```
 git flow release start RELEASE
 git flow release publish RELEASE
 ```
 
-##### Finish a release
+Finish a release:
 ```
 git flow release finish RELEASE
 ```
 
 #### Hotfixes
-##### Start a hotfix
+Start a hotfix:
 ```
 git flow hotfix start HOTFIX
 ```
 
-##### Finish a hotfix
+Finish a hotfix:
 ```
 git flow hotfix finish HOTFIX
 ```
+
+### Tmux
+The 'leader' key for tmux is *Ctrl+A*. Use this before Tmux commands.
+
+#### Split Screen
+```
+<leader> v
+```
+
+#### Windows (tabs)
+To open a new window:
+```
+<leader> N
+```
+To switch between windows
+```
+<leader> h
+```
+or
+```
+<leader> l
+```
+or
+```
+<leader> window #
+```
+
 
 ## Appendix
 
