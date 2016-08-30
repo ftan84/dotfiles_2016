@@ -30,14 +30,14 @@ Plugin Installer.
 #### Git status
 To bring up git status:
 ```
-<leader>git
+<leader> git
 ```
 Move cursor to modified file and press the *-* (dash) key to move to staging.
 Press *cc* to commit. Type your commit message, then save and quit.
 
 #### Push to origin
 ```
-<leader>push
+<leader> push
 ```
 
 ### [Git Flow](http://danielkummer.github.io/git-flow-cheatsheet/)
@@ -82,7 +82,7 @@ Finish a hotfix:
 git flow hotfix finish HOTFIX
 ```
 
-### Tmux
+### [Tmux](https://tmux.github.io)
 The 'leader' key for tmux is *Ctrl+A*. Use this before Tmux commands.
 
 #### Split Screen
