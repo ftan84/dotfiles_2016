@@ -49,7 +49,7 @@ else
     # sudo apt-get -y install pandoc
     # sudo apt-get -y install texlive-full
 
-    sudo apt -y build-dep \
+    sudo apt-get -y build-dep \
         libcurl4-gnutls-dev \
         vim
     sudo apt -y install \
@@ -67,6 +67,7 @@ else
         libssl-dev \
         libcurl4-gnutls-dev \
         pandoc \
+        pandoc-citeproc \
         texlive-full
 fi
 

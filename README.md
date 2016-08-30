@@ -1,4 +1,4 @@
-# Dotfiles 1.6.0 (2016-05-15)
+# Dotfiles 1.7.0 (2016-08-30)
 A set of environment setting dotfiles that are tuned to my personal preference.
 
 These dotfiles are really for my personal use. Much of the code can be credited
@@ -26,6 +26,20 @@ Once the install script finishes, run `vim +PluginInstall` to run the Vundle
 Plugin Installer.
 
 ## Usage
+### Fugitive (Git Vim module)
+#### Git status
+To bring up git status:
+```
+<leader>git
+```
+Move cursor to modified file and press the *-* (dash) key to move to staging.
+Press *cc* to commit. Type your commit message, then save and quit.
+
+#### Push to origin
+```
+<leader>push
+````
+
 ### Git Flow
 [Infographic Cheat Sheet](http://danielkummer.github.io/git-flow-cheatsheet/)
 
