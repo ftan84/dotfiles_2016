@@ -26,16 +26,48 @@ Once the install script finishes, run `vim +PluginInstall` to run the Vundle
 Plugin Installer.
 
 ## Usage
+### Git Flow
+[Infographic Cheat Sheet](http://danielkummer.github.io/git-flow-cheatsheet/)
 
-### Git Flow Cheat Sheet
+#### Initialization
+In project directory (git initialized):
+```
+git flow init
+```
+
 #### Features
-##### Start a new feature
+##### Start and publish a feature
 ```
 git flow feature start MYFEATURE
-```
-##### Publish a feature
-```
 git flow feature publish MYFEATURE
+```
+
+##### Finish a feature
+```
+git flow feature finish MYFEATURE
+```
+
+#### Releases
+##### Start and publish a release
+```
+git flow release start RELEASE
+git flow release publish RELEASE
+```
+
+##### Finish a release
+```
+git flow release finish RELEASE
+```
+
+#### Hotfixes
+##### Start a hotfix
+```
+git flow hotfix start HOTFIX
+```
+
+##### Finish a hotfix
+```
+git flow hotfix finish HOTFIX
 ```
 
 ### YouCompleteMe Installation
