@@ -108,6 +108,11 @@ or
 <leader> window #
 ```
 
+#### Time
+```
+<leader> t
+```
+
 
 ## Appendix
 
