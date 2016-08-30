@@ -26,7 +26,7 @@ Once the install script finishes, run `vim +PluginInstall` to run the Vundle
 Plugin Installer.
 
 ## Usage
-### Fugitive (Git Vim module)
+### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive)
 #### Git status
 To bring up git status:
 ```
@@ -38,11 +38,9 @@ Press *cc* to commit. Type your commit message, then save and quit.
 #### Push to origin
 ```
 <leader>push
-````
+```
 
-### Git Flow
-[Infographic Cheat Sheet](http://danielkummer.github.io/git-flow-cheatsheet/)
-
+### [Git Flow](http://danielkummer.github.io/git-flow-cheatsheet/)
 #### Initialization
 In project directory (git initialized):
 ```
