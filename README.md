@@ -62,46 +62,44 @@ git flow init
 | --- | --- |
 | `git flow feature start HOTFIX` | Start a new hotfix |
 | `git flow feature finish HOTFIX` | Finish hotfix |
-<!-- Start a hotfix: -->
-<!-- ``` -->
-<!-- git flow hotfix start HOTFIX -->
-<!-- ``` -->
-<!--  -->
-<!-- Finish a hotfix: -->
-<!-- ``` -->
-<!-- git flow hotfix finish HOTFIX -->
-<!-- ``` -->
 
 ### [Tmux](https://tmux.github.io)
 The 'leader' key for tmux is <kbd>Ctrl+A</kbd>. Use this before Tmux commands.
 
-#### Split Screen
-```
-<leader> v
-```
-
-#### Windows (tabs)
-To open a new window:
-```
-<leader> N
-```
-To switch between windows
-```
-<leader> h
-```
-or
-```
-<leader> l
-```
-or
-```
-<leader> window #
-```
-
-#### Time
-```
-<leader> t
-```
+| Command | Description |
+| --- | --- |
+| <kbd>leader + v</kbd> | Split screen |
+| <kbd>leader + N</kbd> | Open a new window (tab) |
+| <kbd>leader + h</kbd>/<kbd>leader + l</kbd> | Toggle between windows (tabs) |
+| <kbd>leader + window #</kbd> | Switch directly to window |
+| <kbd>leader + t</kbd> | Show the time |
+<!-- #### Split Screen -->
+<!-- ``` -->
+<!-- <leader> v -->
+<!-- ``` -->
+<!--  -->
+<!-- #### Windows (tabs) -->
+<!-- To open a new window: -->
+<!-- ``` -->
+<!-- <leader> N -->
+<!-- ``` -->
+<!-- To switch between windows -->
+<!-- ``` -->
+<!-- <leader> h -->
+<!-- ``` -->
+<!-- or -->
+<!-- ``` -->
+<!-- <leader> l -->
+<!-- ``` -->
+<!-- or -->
+<!-- ``` -->
+<!-- <leader> window # -->
+<!-- ``` -->
+<!--  -->
+<!-- #### Time -->
+<!-- ``` -->
+<!-- <leader> t -->
+<!-- ``` -->
 
 ### [Nvim-R (R Vim module)](https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt)
 To start R:
