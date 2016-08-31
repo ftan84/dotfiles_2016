@@ -26,6 +26,12 @@ Once the install script finishes, run `vim +PluginInstall` to run the Vundle
 Plugin Installer.
 
 ## Usage
+
+| | [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive) |
+| --- | --- |
+| <kbd><leader> git<kbd> | Bring up git status |
+
+
 ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive)
 #### Git status
 To bring up git status:
