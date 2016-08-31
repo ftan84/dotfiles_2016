@@ -31,21 +31,25 @@ Plugin Installer.
 | Command | Description |
 | --- | --- |
 | `<leader> git` | Bring up git status |
+| <kbd>Ctrl</kdb> + <kbd>n</kbd>/<kbd>Ctrl</kbd> + <kbd>p</kbd> | Move to next/previous file in git status screen |
+| <kbd>-</kbd> | Move file to staging |
+| <kbd>cc</kbd> | Commit from git status screen |
+| `<leader> push` | Push to origin |
 
-
-### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive)
-#### Git status
-To bring up git status:
-```
-<leader> git
-```
-Move cursor to modified file and press the *-* (dash) key to move to staging.
-Press *cc* to commit. Type your commit message, then save and quit.
-
-#### Push to origin
-```
-<leader> push
-```
+<!--  -->
+<!-- ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive) -->
+<!-- #### Git status -->
+<!-- To bring up git status: -->
+<!-- ``` -->
+<!-- <leader> git -->
+<!-- ``` -->
+<!-- Move cursor to modified file and press the *-* (dash) key to move to staging. -->
+<!-- Press *cc* to commit. Type your commit message, then save and quit. -->
+<!--  -->
+<!-- #### Push to origin -->
+<!-- ``` -->
+<!-- <leader> push -->
+<!-- ``` -->
 
 ### [Git Flow](http://danielkummer.github.io/git-flow-cheatsheet/)
 #### Initialization
