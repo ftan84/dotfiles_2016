@@ -31,7 +31,7 @@ Plugin Installer.
 | Command | Description |
 | --- | --- |
 | `<leader> git` | Bring up git status |
-| <kbd>Ctrl</kdb> + <kbd>n</kbd>/<kbd>Ctrl</kbd> + <kbd>p</kbd> | Move to next/previous file in git status screen |
+| <kbd>Ctrl</kbd> + <kbd>n</kbd>/<kbd>Ctrl</kbd> + <kbd>p</kbd> | Move to next/previous file in git status screen |
 | <kbd>-</kbd> | Move file to staging |
 | <kbd>cc</kbd> | Commit from git status screen |
 | `<leader> push` | Push to origin |
