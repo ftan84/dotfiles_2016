@@ -64,7 +64,7 @@ git flow init
 | `git flow feature finish HOTFIX` | Finish hotfix |
 
 ### [Tmux](https://tmux.github.io)
-The *leader* key for tmux is <kbd>Ctrl+A</kbd>. Use this before Tmux commands.
+The *leader* key for tmux is <kbd>Ctrl + A</kbd>. Use this before Tmux commands.
 
 | Command | Description |
 | --- | --- |
