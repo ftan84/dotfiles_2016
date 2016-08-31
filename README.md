@@ -113,6 +113,12 @@ or
 <leader> t
 ```
 
+### [Nvim-R (R Vim module)](https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt)
+To start R:
+```
+\rf
+```
+
 
 ## Appendix
 
