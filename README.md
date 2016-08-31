@@ -49,16 +49,6 @@ git flow init
 | `git flow feature start FEATURE` | Start a new feature |
 | `git flow feature publish FEATURE` | Publish feature |
 | `git flow feature finish FEATURE` | Finish feature |
-<!-- Start and publish a feature: -->
-<!-- ``` -->
-<!-- git flow feature start MYFEATURE -->
-<!-- git flow feature publish MYFEATURE -->
-<!-- ``` -->
-<!--  -->
-<!-- Finish a feature: -->
-<!-- ``` -->
-<!-- git flow feature finish MYFEATURE -->
-<!-- ``` -->
 
 #### Releases
 | Command | Description |
@@ -67,27 +57,20 @@ git flow init
 | `git flow feature publish RELEASE` | Publish release |
 | `git flow feature finish RELEASE` | Finish release |
 
-<!-- Start and publish a release: -->
+#### Hotfixes
+| Command | Description |
+| --- | --- |
+| `git flow feature start HOTFIX` | Start a new hotfix |
+| `git flow feature finish HOTFIX` | Finish hotfix |
+<!-- Start a hotfix: -->
 <!-- ``` -->
-<!-- git flow release start RELEASE -->
-<!-- git flow release publish RELEASE -->
+<!-- git flow hotfix start HOTFIX -->
 <!-- ``` -->
 <!--  -->
-<!-- Finish a release: -->
+<!-- Finish a hotfix: -->
 <!-- ``` -->
-<!-- git flow release finish RELEASE -->
+<!-- git flow hotfix finish HOTFIX -->
 <!-- ``` -->
-
-#### Hotfixes
-Start a hotfix:
-```
-git flow hotfix start HOTFIX
-```
-
-Finish a hotfix:
-```
-git flow hotfix finish HOTFIX
-```
 
 ### [Tmux](https://tmux.github.io)
 The 'leader' key for tmux is <kbd>Ctrl+A</kbd>. Use this before Tmux commands.
