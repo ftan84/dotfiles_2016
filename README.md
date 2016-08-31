@@ -48,7 +48,7 @@ git flow init
 | --- | --- |
 | `git flow feature start FEATURE` | Start a new feature |
 | `git flow feature publish FEATURE` | Publish feature |
-| `git flow feature finish` | Finish feature |
+| `git flow feature finish FEATURE` | Finish feature |
 <!-- Start and publish a feature: -->
 <!-- ``` -->
 <!-- git flow feature start MYFEATURE -->
