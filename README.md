@@ -36,21 +36,6 @@ Plugin Installer.
 | <kbd>cc</kbd> | Commit from git status screen |
 | <kbd>leader + push</kbd> | Push to origin |
 
-<!--  -->
-<!-- ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive) -->
-<!-- #### Git status -->
-<!-- To bring up git status: -->
-<!-- ``` -->
-<!-- <leader> git -->
-<!-- ``` -->
-<!-- Move cursor to modified file and press the *-* (dash) key to move to staging. -->
-<!-- Press *cc* to commit. Type your commit message, then save and quit. -->
-<!--  -->
-<!-- #### Push to origin -->
-<!-- ``` -->
-<!-- <leader> push -->
-<!-- ``` -->
-
 ### [Git Flow](http://danielkummer.github.io/git-flow-cheatsheet/)
 #### Initialization
 In project directory (git initialized):
@@ -59,16 +44,21 @@ git flow init
 ```
 
 #### Features
-Start and publish a feature:
-```
-git flow feature start MYFEATURE
-git flow feature publish MYFEATURE
-```
-
-Finish a feature:
-```
-git flow feature finish MYFEATURE
-```
+| Command | Description |
+| --- | --- |
+| `git flow feature start FEATURE` | Start a new feature |
+| `git flow feature publish FEATURE` | Publish feature |
+| `git flow feature finish` | Finish feature |
+<!-- Start and publish a feature: -->
+<!-- ``` -->
+<!-- git flow feature start MYFEATURE -->
+<!-- git flow feature publish MYFEATURE -->
+<!-- ``` -->
+<!--  -->
+<!-- Finish a feature: -->
+<!-- ``` -->
+<!-- git flow feature finish MYFEATURE -->
+<!-- ``` -->
 
 #### Releases
 Start and publish a release:
