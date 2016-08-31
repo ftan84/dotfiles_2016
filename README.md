@@ -28,6 +28,8 @@ Plugin Installer.
 ## Usage
 
 ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive)
+| Command | Description |
+| --- | --- |
 | `<leader> git` | Bring up git status |
 
 
