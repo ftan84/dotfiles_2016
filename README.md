@@ -29,7 +29,7 @@ Plugin Installer.
 
 | | [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive) |
 | --- | --- |
-| <kbd><leader> git<kbd> | Bring up git status |
+| <kbd><leader> git</kbd> | Bring up git status |
 
 
 ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive)
