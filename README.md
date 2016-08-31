@@ -89,7 +89,7 @@ git flow hotfix finish HOTFIX
 ```
 
 ### [Tmux](https://tmux.github.io)
-The 'leader' key for tmux is <kbd>Ctrl+A<kbd>. Use this before Tmux commands.
+The 'leader' key for tmux is <kbd>Ctrl+A</kbd>. Use this before Tmux commands.
 
 #### Split Screen
 ```
