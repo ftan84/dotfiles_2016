@@ -30,11 +30,11 @@ Plugin Installer.
 ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive)
 | Command | Description |
 | --- | --- |
-| <kbd>leader + git</kbd> | Bring up git status |
+| <kbd>Leader + git</kbd> | Bring up git status |
 | <kbd>Ctrl + n</kbd>/<kbd>Ctrl + p</kbd> | Move to next/previous file in git status screen |
 | <kbd>-</kbd> | Move file to staging |
 | <kbd>cc</kbd> | Commit from git status screen |
-| <kbd>leader + push</kbd> | Push to origin |
+| <kbd>Leader + push</kbd> | Push to origin |
 
 ### [Git Flow](http://danielkummer.github.io/git-flow-cheatsheet/)
 #### Initialization
@@ -68,11 +68,11 @@ The 'leader' key for tmux is <kbd>Ctrl+A</kbd>. Use this before Tmux commands.
 
 | Command | Description |
 | --- | --- |
-| <kbd>leader + v</kbd> | Split screen |
-| <kbd>leader + N</kbd> | Open a new window (tab) |
-| <kbd>leader + h</kbd>/<kbd>leader + l</kbd> | Toggle between windows (tabs) |
-| <kbd>leader + window #</kbd> | Switch directly to window |
-| <kbd>leader + t</kbd> | Show the time |
+| <kbd>Leader + v</kbd> | Split screen |
+| <kbd>Leader + N</kbd> | Open a new window (tab) |
+| <kbd>Leader + h</kbd>/<kbd>Leader + l</kbd> | Toggle between windows (tabs) |
+| <kbd>Leader + window #</kbd> | Switch directly to window |
+| <kbd>Leader + t</kbd> | Show the time |
 
 ### [Nvim-R (R Vim module)](https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt)
 | Command | Description |
@@ -80,14 +80,6 @@ The 'leader' key for tmux is <kbd>Ctrl+A</kbd>. Use this before Tmux commands.
 | <kbd>\rf</kbd> | Start a new R session |
 | <kbd>\d</kbd> | Send lines to R |
 | <kbd>\rq</kbd> | Quit R session without saving |
-<!-- To start R: -->
-<!-- ``` -->
-<!-- \rf -->
-<!-- ``` -->
-<!-- To send lines to R: -->
-<!-- ``` -->
-<!-- \d -->
-<!-- ``` -->
 
 ## Appendix
 
