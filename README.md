@@ -61,16 +61,22 @@ git flow init
 <!-- ``` -->
 
 #### Releases
-Start and publish a release:
-```
-git flow release start RELEASE
-git flow release publish RELEASE
-```
+| Command | Description |
+| --- | --- |
+| `git flow feature start RELEASE` | Start a new release |
+| `git flow feature publish RELEASE` | Publish release |
+| `git flow feature finish RELEASE` | Finish release |
 
-Finish a release:
-```
-git flow release finish RELEASE
-```
+<!-- Start and publish a release: -->
+<!-- ``` -->
+<!-- git flow release start RELEASE -->
+<!-- git flow release publish RELEASE -->
+<!-- ``` -->
+<!--  -->
+<!-- Finish a release: -->
+<!-- ``` -->
+<!-- git flow release finish RELEASE -->
+<!-- ``` -->
 
 #### Hotfixes
 Start a hotfix:
