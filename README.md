@@ -30,11 +30,11 @@ Plugin Installer.
 ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive)
 | Command | Description |
 | --- | --- |
-| `<leader> git` | Bring up git status |
+| <kbd>leader + git</kbd> | Bring up git status |
 | <kbd>Ctrl + n</kbd>/<kbd>Ctrl + p</kbd> | Move to next/previous file in git status screen |
 | <kbd>-</kbd> | Move file to staging |
 | <kbd>cc</kbd> | Commit from git status screen |
-| `<leader> push` | Push to origin |
+| <kbd>leader + push</kbd> | Push to origin |
 
 <!--  -->
 <!-- ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive) -->
