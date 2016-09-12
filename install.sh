@@ -68,7 +68,11 @@ else
         libcurl4-gnutls-dev \
         pandoc \
         pandoc-citeproc \
-        texlive-full
+        # texlive-full
+        lmodern \
+        xzdec \
+        texlive \
+        texlive-latex-extra
 fi
 
 
