@@ -6,5 +6,9 @@
             "mode": "mode_insert"
         },
         "context": [{"key": "vi_insert_mode_aware"}]
-    }
+    },
+	{ "keys": [",", "s"], "command": "save" },
+	{ "keys": [",", "q"], "command": "close" },
+    { "keys": ["ctrl+h"], "command": "focus_neighboring_group", "args": {"forward": false} },
+    { "keys": ["ctrl+l"], "command": "focus_neighboring_group" },
 ]

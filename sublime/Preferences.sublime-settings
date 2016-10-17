@@ -1,11 +1,18 @@
 {
+	"caret_extra_bottom": 0,
+	"caret_extra_top": 0,
+	"caret_extra_width": 1,
+	"caret_style": "blink",
 	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
+	"font_face": "Inconsolata",
+	"font_size": 13,
+	"highlight_line": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"overlay_scroll_bars": "disabled",
 	"theme": "Spacegray Eighties.sublime-theme",
 	"vintageous_use_ctrl_keys": true,
-	"overlay_scroll_bars": "disabled"
-	
+    "highlight_modified_tabs": false,
 }
