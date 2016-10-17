@@ -2,13 +2,13 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"gruvbox"
 	],
 	"installed_packages":
 	[
 		"gruvbox",
 		"Package Control",
 		"R-Box",
+		"ReadmePlease",
 		"SendREPL",
 		"SublimeGit",
 		"SublimeREPL",
