@@ -11,8 +11,10 @@
 	[
 		"Vintage"
 	],
-	"overlay_scroll_bars": "disabled",
+	"overlay_scroll_bars": "enabled",
+	"rulers": [80],
+	"word_wrap": true,
 	"theme": "Spacegray Eighties.sublime-theme",
 	"vintageous_use_ctrl_keys": true,
-    "highlight_modified_tabs": false,
+   	"highlight_modified_tabs": false,
 }
