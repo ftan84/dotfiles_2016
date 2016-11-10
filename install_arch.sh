@@ -53,7 +53,19 @@ if type apt-get > /dev/null 2>&1; then
         texlive-full
 elif type pacman > /dev/null 2>&1; then
 	echo -e "\033[1mRunning Pacman...033[0m"
+	git clone https://aur.archlinux.org/package-query.git
+	cd package-query
+	makepkg -si --noconfirm
+	cd ..
+	rm -rf package-query
+	git clone https://aur.archlinux.org/yaourt.git
+	cd yaourt
+	makepkg -si --noconfirm
+	cd ..
+	rm -rf yaourt
+
 	sudo pacman -Sy --noconfirm \
+		base-devel
 		libcurl-gnutls \
 		vim \
 		wget \
@@ -66,6 +78,7 @@ elif type pacman > /dev/null 2>&1; then
 		pandoc \
 		pandoc-citeproc \
 		texlive-core
+	echo 'Finished pacman install'
 fi
 
 
