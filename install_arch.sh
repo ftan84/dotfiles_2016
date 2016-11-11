@@ -77,7 +77,14 @@ elif type pacman > /dev/null 2>&1; then
 		r \
 		pandoc \
 		pandoc-citeproc \
-		texlive-core
+		texlive-core \
+        numix-themes
+
+    sudo yaourt -Sy --noconfirm \
+        numix-icon-theme-git \
+        numix-circle-icon-theme-git \
+        xfce-theme-greybird \
+        xfpanel-switch
     echo -e "\033[1mFinished pacman install.\033[0m"
 fi
 
