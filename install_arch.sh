@@ -52,7 +52,7 @@ if type apt-get > /dev/null 2>&1; then
         pandoc-citeproc \
         texlive-full
 elif type pacman > /dev/null 2>&1; then
-	echo -e "\033[1mRunning Pacman...033[0m"
+	echo -e "\033[1mRunning Pacman...\033[0m"
 	git clone https://aur.archlinux.org/package-query.git
 	cd package-query
 	makepkg -si --noconfirm
@@ -78,133 +78,133 @@ elif type pacman > /dev/null 2>&1; then
 		pandoc \
 		pandoc-citeproc \
 		texlive-core
-	echo 'Finished pacman install'
+    echo -e "\033[1mFinished pacman install.\033[0m"
 fi
 
 
-# # Build latest vim
-# # if ! hash vim 2>/dev/null; then
-# #     echo -e "\033[1mBuilding the latest Vim...\033[0m"
-# #     git clone https://github.com/vim/vim ~/viminstaller
-# #     cd ~/viminstaller/src
-# #     ./configure --enable-pythoninterp
-# #     make
-# #     sudo make install
-# #     # Create vim directory for swap files
-# #     mkdir -p ~/.vim-tmp
-# # fi
-# echo -e "\033[1mBuilding the latest Vim...\033[0m"
-# git clone https://github.com/vim/vim ~/viminstaller
-# cd ~/viminstaller/src
-# ./configure --enable-pythoninterp
-# make
-# sudo make install
-# # Create vim directory for swap files
-# mkdir -p ~/.vim-tmp
-# 
-# 
-# # Run R install script
-# echo -e "\033[1mSetting up R environment...\033[0m"
-# sudo Rscript ~/dotfiles/R/install.R
-# 
-# 
-# # Installing pip
-# if ! hash pip 2>/dev/null; then
-#     echo -e "\033[1mInstalling pip...\033[0m"
-#     wget https://bootstrap.pypa.io/get-pip.py
-#     sudo python get-pip.py
-#     rm get-pip.py
-#     sudo -H pip install virtualenv
-#     sudo -H pip install --no-deps virtualenvwrapper
-#     sudo -H pip install --no-deps stevedore
+# Build latest vim
+# if ! hash vim 2>/dev/null; then
+#     echo -e "\033[1mBuilding the latest Vim...\033[0m"
+#     git clone https://github.com/vim/vim ~/viminstaller
+#     cd ~/viminstaller/src
+#     ./configure --enable-pythoninterp
+#     make
+#     sudo make install
+#     # Create vim directory for swap files
+#     mkdir -p ~/.vim-tmp
 # fi
-# 
-# 
-# # Install Vundle
-# cd ~
-# if [ -e './dotfiles/vim/bundle/Vundle.vim' ]; then
-#     echo -e "\033[1mVundle already installed. Skipping\033[0m"
-# else
-#     echo -e "\033[1mInstalling Vundle...\033[0m"
-#     git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
-# fi
-# 
-# 
-# # Change default shell to zsh
-# # chsh -s $(which zsh)
-# 
-# # Install Oh My Zsh
-# # sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-# # rm ~/.zshrc.pre-oh-my-zsh
-# # ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
-# 
-# 
-# # Manual Install of Oh-My-Zsh
-# cd ~
-# if [ -d '.oh-my-zsh' ]; then
-#     echo -e "\033[1mOh-My-Zsh already installed. Skipping\033[0m"
-# else
-#     echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
-#     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-# fi
-# 
-# 
-# # Symlinks
-# echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
-# # rm ~/.vimrc
-# # rm ~/.zshrc
-# # rm ~/.emacs
-# cd ~
-# if [ ! -d './.old-dotfiles' ]; then
-#     mkdir ~/.old-dotfiles/
-# fi
-# if [ -e '.vimrc' ]; then
-#     mv ~/.vimrc ~/.old-dotfiles
-# fi
-# if [ -e '.zshrc' ]; then
-#     mv ~/.zshrc ~/.old-dotfiles
-# fi
-# if [ -e '.emacs' ]; then
-#     mv ~/.emacs ~/.old-dotfiles
-# fi
+echo -e "\033[1mBuilding the latest Vim...\033[0m"
+git clone https://github.com/vim/vim ~/viminstaller
+cd ~/viminstaller/src
+./configure --enable-pythoninterp
+make
+sudo make install
+# Create vim directory for swap files
+mkdir -p ~/.vim-tmp
+
+
+# Run R install script
+echo -e "\033[1mSetting up R environment...\033[0m"
+sudo Rscript ~/dotfiles/R/install.R
+
+
+# Installing pip
+if ! hash pip 2>/dev/null; then
+    echo -e "\033[1mInstalling pip...\033[0m"
+    wget https://bootstrap.pypa.io/get-pip.py
+    sudo python get-pip.py
+    rm get-pip.py
+    sudo -H pip install virtualenv
+    sudo -H pip install --no-deps virtualenvwrapper
+    sudo -H pip install --no-deps stevedore
+fi
+
+
+# Install Vundle
+cd ~
+if [ -e './dotfiles/vim/bundle/Vundle.vim' ]; then
+    echo -e "\033[1mVundle already installed. Skipping\033[0m"
+else
+    echo -e "\033[1mInstalling Vundle...\033[0m"
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+fi
+
+
+# Change default shell to zsh
+# chsh -s $(which zsh)
+
+# Install Oh My Zsh
+# sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# rm ~/.zshrc.pre-oh-my-zsh
 # ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
-# ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
-# ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
-# ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
-# ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
-# ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
-# ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
-# ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
-# sudo chmod a+w /usr/local/lib/R/site-library
-# 
-# 
-# # Setting git defaults
-# echo -e "\033[1mSetting up sane git defaults...\033[0m"
-# git config --global user.email "francis.adrian.tan@gmail.com"
-# git config --global user.name "Francis Tan"
-# git config --global push.default simple
-# git config --global core.editor "vim"
-# git config --global diff.tool vimdiff
-# git config --global merge.tool vimdiff
-# git config --global difftool.prompt false
-# git config --global credential.helper cache
-# git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
-# 
-# 
-# # Remove the vim directory after building
-# cd ~
-# if [ -d 'viminstaller' ]; then
-#     rm -rf ~/viminstaller
-# fi
-# cd ~
-# 
-# 
-# # Set zsh as default
-# if [ $SHELL == '/usr/bin/zsh' ]; then
-#     echo -e "\033[1mZSH is already the default shell. Skipping\033[0m"
-# else
-#     echo -e "\033[1mSetting ZSH as default shell...\033[0m"
-#     chsh -s $(which zsh)
-# fi
+
+
+# Manual Install of Oh-My-Zsh
+cd ~
+if [ -d '.oh-my-zsh' ]; then
+    echo -e "\033[1mOh-My-Zsh already installed. Skipping\033[0m"
+else
+    echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
+
+
+# Symlinks
+echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
+# rm ~/.vimrc
+# rm ~/.zshrc
+# rm ~/.emacs
+cd ~
+if [ ! -d './.old-dotfiles' ]; then
+    mkdir ~/.old-dotfiles/
+fi
+if [ -e '.vimrc' ]; then
+    mv ~/.vimrc ~/.old-dotfiles
+fi
+if [ -e '.zshrc' ]; then
+    mv ~/.zshrc ~/.old-dotfiles
+fi
+if [ -e '.emacs' ]; then
+    mv ~/.emacs ~/.old-dotfiles
+fi
+ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
+ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
+ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
+ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
+ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
+ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
+ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
+ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
+sudo chmod a+w /usr/local/lib/R/site-library
+
+
+# Setting git defaults
+echo -e "\033[1mSetting up sane git defaults...\033[0m"
+git config --global user.email "francis.adrian.tan@gmail.com"
+git config --global user.name "Francis Tan"
+git config --global push.default simple
+git config --global core.editor "vim"
+git config --global diff.tool vimdiff
+git config --global merge.tool vimdiff
+git config --global difftool.prompt false
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
+
+
+# Remove the vim directory after building
+cd ~
+if [ -d 'viminstaller' ]; then
+    rm -rf ~/viminstaller
+fi
+cd ~
+
+
+# Set zsh as default
+if [ $SHELL == '/usr/bin/zsh' ]; then
+    echo -e "\033[1mZSH is already the default shell. Skipping\033[0m"
+else
+    echo -e "\033[1mSetting ZSH as default shell...\033[0m"
+    chsh -s $(which zsh)
+fi
 
 exit 0
