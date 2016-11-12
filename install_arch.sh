@@ -67,10 +67,10 @@ elif type pacman > /dev/null 2>&1; then
     sudo pacman -Sy --noconfirm \
         base-devel \
         libcurl-gnutls \
+        r \
         vim \
         wget \
         tree \
-        gitflow-git \
         tmux \
         cmake \
         acpi \
@@ -85,8 +85,9 @@ elif type pacman > /dev/null 2>&1; then
         numix-circle-icon-theme-git \
         xfce-theme-greybird \
         xfpanel-switch \
+        gitflow-git \
         powerline-fonts-git \
-        microsoft-r-open
+        # microsoft-r-open
 
     echo -e "\033[1mFinished pacman install.\033[0m"
 fi
