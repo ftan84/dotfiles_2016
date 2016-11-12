@@ -52,39 +52,42 @@ if type apt-get > /dev/null 2>&1; then
         pandoc-citeproc \
         texlive-full
 elif type pacman > /dev/null 2>&1; then
-	echo -e "\033[1mRunning Pacman...\033[0m"
-	git clone https://aur.archlinux.org/package-query.git
-	cd package-query
-	makepkg -si --noconfirm
-	cd ..
-	rm -rf package-query
-	git clone https://aur.archlinux.org/yaourt.git
-	cd yaourt
-	makepkg -si --noconfirm
-	cd ..
-	rm -rf yaourt
+    echo -e "\033[1mRunning Pacman...\033[0m"
+    git clone https://aur.archlinux.org/package-query.git
+    cd package-query
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf package-query
+    git clone https://aur.archlinux.org/yaourt.git
+    cd yaourt
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf yaourt
 
-	sudo pacman -Sy --noconfirm \
-		base-devel
-		libcurl-gnutls \
-		vim \
-		wget \
-		tree \
-		gitflow-git \
-		tmux \
-		cmake \
-		acpi \
-		r \
-		pandoc \
-		pandoc-citeproc \
-		texlive-core \
-        numix-themes
+    sudo pacman -Sy --noconfirm \
+        base-devel \
+        libcurl-gnutls \
+        vim \
+        wget \
+        tree \
+        gitflow-git \
+        tmux \
+        cmake \
+        acpi \
+        pandoc \
+        pandoc-citeproc \
+        texlive-core \
+        numix-themes \
+        chromium
 
-    sudo yaourt -Sy --noconfirm \
+    yaourt -Sy --noconfirm \
         numix-icon-theme-git \
         numix-circle-icon-theme-git \
         xfce-theme-greybird \
-        xfpanel-switch
+        xfpanel-switch \
+        powerline-fonts-git \
+        microsoft-r-open
+
     echo -e "\033[1mFinished pacman install.\033[0m"
 fi
 
@@ -100,14 +103,14 @@ fi
 #     # Create vim directory for swap files
 #     mkdir -p ~/.vim-tmp
 # fi
-echo -e "\033[1mBuilding the latest Vim...\033[0m"
-git clone https://github.com/vim/vim ~/viminstaller
-cd ~/viminstaller/src
-./configure --enable-pythoninterp
-make
-sudo make install
-# Create vim directory for swap files
-mkdir -p ~/.vim-tmp
+# echo -e "\033[1mBuilding the latest Vim...\033[0m"
+# git clone https://github.com/vim/vim ~/viminstaller
+# cd ~/viminstaller/src
+# ./configure --enable-pythoninterp
+# make
+# sudo make install
+# # Create vim directory for swap files
+# mkdir -p ~/.vim-tmp
 
 
 # Run R install script
