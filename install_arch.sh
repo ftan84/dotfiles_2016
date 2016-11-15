@@ -58,26 +58,50 @@ elif type pacman > /dev/null 2>&1; then
     makepkg -si --noconfirm
     cd ..
     rm -rf package-query
+
     git clone https://aur.archlinux.org/yaourt.git
     cd yaourt
     makepkg -si --noconfirm
     cd ..
     rm -rf yaourt
 
+    # cd ~
+    # mkdir .tmp
+    # mkdir .tmp/yaourt
+    # echo 'set TMPDIR=/home/vagrant/.tmp/yaourt' > ~/.yaourtrc
+    
+
+    # Yaourt could not install MS R Open, installing manually
+    # git clone https://aur.archlinux.org/microsoft-r-open.git
+    # cd microsoft-r-open
+    # makepkg -si --noconfirm
+    # cd ..
+    # rm -rf microsoft-r-open
+
+    # Manual install for gitflow
+    git clone https://aur.archlinux.org/gitflow-avh-git.git
+    cd gitflow-avh-git
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf gitflow-avh-git
+
+
     sudo pacman -Sy --noconfirm \
         base-devel \
         libcurl-gnutls \
-        r \
         vim \
         wget \
         tree \
         tmux \
         cmake \
         acpi \
+        python-pip \
+        python2-pip \
         pandoc \
         pandoc-citeproc \
         texlive-core \
         numix-themes \
+        r \
         chromium
 
     yaourt -Sy --noconfirm \
@@ -85,50 +109,54 @@ elif type pacman > /dev/null 2>&1; then
         numix-circle-icon-theme-git \
         xfce-theme-greybird \
         xfpanel-switch \
-        gitflow-git \
         powerline-fonts-git \
-        # microsoft-r-open
 
     echo -e "\033[1mFinished pacman install.\033[0m"
 fi
 
 
 # Build latest vim
-# if ! hash vim 2>/dev/null; then
-#     echo -e "\033[1mBuilding the latest Vim...\033[0m"
-#     git clone https://github.com/vim/vim ~/viminstaller
-#     cd ~/viminstaller/src
-#     ./configure --enable-pythoninterp
-#     make
-#     sudo make install
-#     # Create vim directory for swap files
-#     mkdir -p ~/.vim-tmp
-# fi
-# echo -e "\033[1mBuilding the latest Vim...\033[0m"
-# git clone https://github.com/vim/vim ~/viminstaller
-# cd ~/viminstaller/src
-# ./configure --enable-pythoninterp
-# make
-# sudo make install
-# # Create vim directory for swap files
-# mkdir -p ~/.vim-tmp
+if ! type pacman > /dev/null 2>&1; then
+    if ! hash vim 2>/dev/null; then
+        echo -e "\033[1mBuilding the latest Vim...\033[0m"
+        git clone https://github.com/vim/vim ~/viminstaller
+        cd ~/viminstaller/src
+        ./configure --enable-pythoninterp
+        make
+        sudo make install
+        # Create vim directory for swap files
+        mkdir -p ~/.vim-tmp
+    fi
+    echo -e "\033[1mBuilding the latest Vim...\033[0m"
+    git clone https://github.com/vim/vim ~/viminstaller
+    cd ~/viminstaller/src
+    ./configure --enable-pythoninterp
+    make
+    sudo make install
+    # Create vim directory for swap files
+    mkdir -p ~/.vim-tmp
+fi
 
 
 # Run R install script
+# This doesn't really work on arch with MS R
 echo -e "\033[1mSetting up R environment...\033[0m"
+# sudo chmod o+w /usr/lib/microsoft-r/3.3/lib64/R/library
 sudo Rscript ~/dotfiles/R/install.R
 
 
 # Installing pip
-if ! hash pip 2>/dev/null; then
-    echo -e "\033[1mInstalling pip...\033[0m"
-    wget https://bootstrap.pypa.io/get-pip.py
-    sudo python get-pip.py
-    rm get-pip.py
-    sudo -H pip install virtualenv
-    sudo -H pip install --no-deps virtualenvwrapper
-    sudo -H pip install --no-deps stevedore
+if ! type pacman > /dev/null 2>&1; then
+    if ! hash pip 2>/dev/null; then
+        echo -e "\033[1mInstalling pip...\033[0m"
+        wget https://bootstrap.pypa.io/get-pip.py
+        sudo python get-pip.py
+        rm get-pip.py
+    fi
 fi
+sudo -H pip install virtualenv
+sudo -H pip install --no-deps virtualenvwrapper
+sudo -H pip install --no-deps stevedore
 
 
 # Install Vundle
@@ -178,6 +206,9 @@ fi
 if [ -e '.emacs' ]; then
     mv ~/.emacs ~/.old-dotfiles
 fi
+if [ -e '.tmux.conf' ]; then
+    mv ~/.tmux.conf ~/.old-dotfiles
+fi
 ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
@@ -203,11 +234,13 @@ git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
 
 
 # Remove the vim directory after building
-cd ~
-if [ -d 'viminstaller' ]; then
-    rm -rf ~/viminstaller
+if ! type pacman > /dev/null 2>&1; then
+    cd ~
+    if [ -d 'viminstaller' ]; then
+        rm -rf ~/viminstaller
+    fi
+    cd ~
 fi
-cd ~
 
 
 # Set zsh as default
