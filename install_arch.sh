@@ -153,8 +153,8 @@ if ! type pacman > /dev/null 2>&1; then
     fi
 fi
 sudo -H pip install virtualenv
-sudo -H pip install --no-deps virtualenvwrapper
-sudo -H pip install --no-deps stevedore
+sudo -H pip install virtualenvwrapper
+sudo -H pip install stevedore
 
 
 # Install Vundle
