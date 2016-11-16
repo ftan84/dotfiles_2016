@@ -69,14 +69,13 @@ elif type pacman > /dev/null 2>&1; then
     # mkdir .tmp
     # mkdir .tmp/yaourt
     # echo 'set TMPDIR=/home/vagrant/.tmp/yaourt' > ~/.yaourtrc
-    
 
     # Yaourt could not install MS R Open, installing manually
-    # git clone https://aur.archlinux.org/microsoft-r-open.git
-    # cd microsoft-r-open
-    # makepkg -si --noconfirm
-    # cd ..
-    # rm -rf microsoft-r-open
+    git clone https://aur.archlinux.org/microsoft-r-open.git
+    cd microsoft-r-open
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf microsoft-r-open
 
     # Manual install for gitflow
     git clone https://aur.archlinux.org/gitflow-avh-git.git
@@ -101,7 +100,6 @@ elif type pacman > /dev/null 2>&1; then
         pandoc-citeproc \
         texlive-core \
         numix-themes \
-        r \
         chromium
 
     yaourt -Sy --noconfirm \
