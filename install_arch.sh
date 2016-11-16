@@ -70,21 +70,6 @@ elif type pacman > /dev/null 2>&1; then
     # mkdir .tmp/yaourt
     # echo 'set TMPDIR=/home/vagrant/.tmp/yaourt' > ~/.yaourtrc
 
-    # Yaourt could not install MS R Open, installing manually
-    git clone https://aur.archlinux.org/microsoft-r-open.git
-    cd microsoft-r-open
-    makepkg -si --noconfirm
-    cd ..
-    rm -rf microsoft-r-open
-
-    # Manual install for gitflow
-    git clone https://aur.archlinux.org/gitflow-avh-git.git
-    cd gitflow-avh-git
-    makepkg -si --noconfirm
-    cd ..
-    rm -rf gitflow-avh-git
-
-
     sudo pacman -Sy --noconfirm \
         base-devel \
         libcurl-gnutls \
@@ -108,6 +93,20 @@ elif type pacman > /dev/null 2>&1; then
         xfce-theme-greybird \
         xfpanel-switch \
         powerline-fonts-git \
+
+    # Yaourt could not install MS R Open, installing manually
+    git clone https://aur.archlinux.org/microsoft-r-open.git
+    cd microsoft-r-open
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf microsoft-r-open
+
+    # Manual install for gitflow
+    git clone https://aur.archlinux.org/gitflow-avh-git.git
+    cd gitflow-avh-git
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf gitflow-avh-git
 
     echo -e "\033[1mFinished pacman install.\033[0m"
 fi
