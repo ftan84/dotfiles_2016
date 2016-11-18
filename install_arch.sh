@@ -145,13 +145,19 @@ sudo Rscript ~/dotfiles/R/install.R
 
 
 # Installing pip
-if ! type pacman > /dev/null 2>&1; then
-    if ! hash pip 2>/dev/null; then
-        echo -e "\033[1mInstalling pip...\033[0m"
-        wget https://bootstrap.pypa.io/get-pip.py
-        sudo python get-pip.py
-        rm get-pip.py
-    fi
+# if ! type pacman > /dev/null 2>&1; then
+#     if ! hash pip 2>/dev/null; then
+#         echo -e "\033[1mInstalling pip...\033[0m"
+#         wget https://bootstrap.pypa.io/get-pip.py
+#         sudo python get-pip.py
+#         rm get-pip.py
+#     fi
+# fi
+if ! hash pip 2>/dev/null; then
+    echo -e "\033[1mInstalling pip...\033[0m"
+    wget https://bootstrap.pypa.io/get-pip.py
+    sudo python get-pip.py
+    rm get-pip.py
 fi
 sudo -H pip install virtualenv
 sudo -H pip install virtualenvwrapper
