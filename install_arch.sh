@@ -81,8 +81,8 @@ elif type pacman > /dev/null 2>&1; then
         tmux \
         cmake \
         acpi \
-        python-pip \
-        python2-pip \
+        # python-pip \
+        # python2-pip \
         pandoc \
         pandoc-citeproc \
         texlive-core \
