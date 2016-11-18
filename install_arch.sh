@@ -70,6 +70,8 @@ elif type pacman > /dev/null 2>&1; then
     # mkdir .tmp/yaourt
     # echo 'set TMPDIR=/home/vagrant/.tmp/yaourt' > ~/.yaourtrc
 
+    sudo pacman -Syu --noconfirm
+
     sudo pacman -Sy --noconfirm \
         base-devel \
         libcurl-gnutls \
