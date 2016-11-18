@@ -153,15 +153,16 @@ sudo Rscript ~/dotfiles/R/install.R
 #         rm get-pip.py
 #     fi
 # fi
-if ! hash pip 2>/dev/null; then
-    echo -e "\033[1mInstalling pip...\033[0m"
-    wget https://bootstrap.pypa.io/get-pip.py
-    sudo python get-pip.py
-    rm get-pip.py
-fi
-sudo -H pip install virtualenv
-sudo -H pip install virtualenvwrapper
-sudo -H pip install stevedore
+
+# if ! hash pip 2>/dev/null; then
+#     echo -e "\033[1mInstalling pip...\033[0m"
+#     wget https://bootstrap.pypa.io/get-pip.py
+#     sudo python get-pip.py
+#     rm get-pip.py
+# fi
+# sudo -H pip install virtualenv
+# sudo -H pip install virtualenvwrapper
+# sudo -H pip install stevedore
 
 
 # Install Vundle
