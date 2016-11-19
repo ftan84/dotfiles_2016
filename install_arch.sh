@@ -161,8 +161,8 @@ sudo Rscript ~/dotfiles/R/install.R
 #     rm get-pip.py
 # fi
 # sudo -H pip install virtualenv
-# sudo -H pip install virtualenvwrapper
 # sudo -H pip install stevedore
+# sudo -H pip install virtualenvwrapper
 
 
 # Install Vundle
