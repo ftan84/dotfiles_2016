@@ -53,6 +53,8 @@ if type apt-get > /dev/null 2>&1; then
         texlive-full
 elif type pacman > /dev/null 2>&1; then
     echo -e "\033[1mRunning Pacman...\033[0m"
+    sudo pacman -Syu --noconfirm
+
     git clone https://aur.archlinux.org/package-query.git
     cd package-query
     makepkg -si --noconfirm
@@ -70,9 +72,7 @@ elif type pacman > /dev/null 2>&1; then
     # mkdir .tmp/yaourt
     # echo 'set TMPDIR=/home/vagrant/.tmp/yaourt' > ~/.yaourtrc
 
-    sudo pacman -Syu --noconfirm
-
-    sudo pacman -Sy --noconfirm \
+    sudo pacman -Sy --noconfirm --needed \
         base-devel \
         libcurl-gnutls \
         vim \
@@ -81,15 +81,15 @@ elif type pacman > /dev/null 2>&1; then
         tmux \
         cmake \
         acpi \
-        # python-pip \
-        # python2-pip \
+        python-pip \
+        python2-pip \
         pandoc \
         pandoc-citeproc \
         texlive-core \
         numix-themes \
         chromium
 
-    yaourt -Sy --noconfirm \
+    yaourt -Sy --noconfirm --needed \
         numix-icon-theme-git \
         numix-circle-icon-theme-git \
         xfce-theme-greybird \
@@ -145,14 +145,14 @@ sudo Rscript ~/dotfiles/R/install.R
 
 
 # Installing pip
-# if ! type pacman > /dev/null 2>&1; then
-#     if ! hash pip 2>/dev/null; then
-#         echo -e "\033[1mInstalling pip...\033[0m"
-#         wget https://bootstrap.pypa.io/get-pip.py
-#         sudo python get-pip.py
-#         rm get-pip.py
-#     fi
-# fi
+if ! type pacman > /dev/null 2>&1; then
+    if ! hash pip 2>/dev/null; then
+        echo -e "\033[1mInstalling pip...\033[0m"
+        wget https://bootstrap.pypa.io/get-pip.py
+        sudo python get-pip.py
+        rm get-pip.py
+    fi
+fi
 
 # if ! hash pip 2>/dev/null; then
 #     echo -e "\033[1mInstalling pip...\033[0m"
@@ -160,9 +160,9 @@ sudo Rscript ~/dotfiles/R/install.R
 #     sudo python get-pip.py
 #     rm get-pip.py
 # fi
-# sudo -H pip install virtualenv
-# sudo -H pip install stevedore
-# sudo -H pip install virtualenvwrapper
+sudo pip install virtualenv
+sudo pip install stevedore
+sudo pip install virtualenvwrapper
 
 
 # Install Vundle
