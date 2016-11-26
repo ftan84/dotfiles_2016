@@ -74,7 +74,7 @@ set guioptions-=L  "remove left-hand scroll bar
 
 " This terminal supports colors
 " set term=rxvt-256color
-set term=screen-256color
+" set term=screen-256color
 
 " Color scheme
 set t_Co=256
