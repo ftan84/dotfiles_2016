@@ -51,7 +51,7 @@ if type apt-get > /dev/null 2>&1; then
         build-essential \
         cmake \
         acpi \
-        r-base \
+        # r-base \
         libssl-dev \
         libcurl4-gnutls-dev \
         pandoc \
