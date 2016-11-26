@@ -131,6 +131,12 @@ elif type pacman > /dev/null 2>&1; then
     echo -e "\033[1mFinished pacman install.\033[0m"
 fi
 
+# Getting powerline fonts
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
 
 # Build latest vim
 # if ! type pacman > /dev/null 2>&1; then
