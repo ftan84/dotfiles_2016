@@ -247,6 +247,10 @@ ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
+# Neovim symlink
+mkdir ~/.config
+mkdir ~/.config/nvim
+ln -s ~/dotfiles/vim/vimrc.symlink ~/.config/nvim/init.vim
 sudo chmod a+w /usr/local/lib/R/site-library
 
 
