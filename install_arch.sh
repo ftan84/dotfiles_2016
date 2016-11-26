@@ -10,6 +10,10 @@ sudo echo -e "\033[1mInstalling dotfiles...\033[0m"
 
 if type apt-get > /dev/null 2>&1; then
     echo -e "\033[1mRunning Linux\033[0m"
+    sudo apt install software-properties-common
+
+    sudo add-apt-repository ppa:neovim-ppa/unstable
+
     sudo apt update
     sudo apt -y upgrade
 
@@ -42,6 +46,8 @@ if type apt-get > /dev/null 2>&1; then
         tmux \
         python-dev \
         python3-dev \
+        python-pip \
+        python3-pip \
         build-essential \
         cmake \
         acpi \
@@ -50,7 +56,15 @@ if type apt-get > /dev/null 2>&1; then
         libcurl4-gnutls-dev \
         pandoc \
         pandoc-citeproc \
-        texlive-full
+        texlive \
+        neovim
+
+    git clone https://aur.archlinux.org/microsoft-r-open.git
+    cd microsoft-r-open
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf microsoft-r-open
+
 elif type pacman > /dev/null 2>&1; then
     echo -e "\033[1mRunning Pacman...\033[0m"
     sudo pacman -Syu --noconfirm
@@ -115,26 +129,26 @@ fi
 
 
 # Build latest vim
-if ! type pacman > /dev/null 2>&1; then
-    if ! hash vim 2>/dev/null; then
-        echo -e "\033[1mBuilding the latest Vim...\033[0m"
-        git clone https://github.com/vim/vim ~/viminstaller
-        cd ~/viminstaller/src
-        ./configure --enable-pythoninterp
-        make
-        sudo make install
-        # Create vim directory for swap files
-        mkdir -p ~/.vim-tmp
-    fi
-    echo -e "\033[1mBuilding the latest Vim...\033[0m"
-    git clone https://github.com/vim/vim ~/viminstaller
-    cd ~/viminstaller/src
-    ./configure --enable-pythoninterp
-    make
-    sudo make install
-    # Create vim directory for swap files
-    mkdir -p ~/.vim-tmp
-fi
+# if ! type pacman > /dev/null 2>&1; then
+#     if ! hash vim 2>/dev/null; then
+#         echo -e "\033[1mBuilding the latest Vim...\033[0m"
+#         git clone https://github.com/vim/vim ~/viminstaller
+#         cd ~/viminstaller/src
+#         ./configure --enable-pythoninterp
+#         make
+#         sudo make install
+#         # Create vim directory for swap files
+#         mkdir -p ~/.vim-tmp
+#     fi
+#     echo -e "\033[1mBuilding the latest Vim...\033[0m"
+#     git clone https://github.com/vim/vim ~/viminstaller
+#     cd ~/viminstaller/src
+#     ./configure --enable-pythoninterp
+#     make
+#     sudo make install
+#     # Create vim directory for swap files
+#     mkdir -p ~/.vim-tmp
+# fi
 
 
 # Run R install script
@@ -145,14 +159,14 @@ sudo Rscript ~/dotfiles/R/install.R
 
 
 # Installing pip
-if ! type pacman > /dev/null 2>&1; then
-    if ! hash pip 2>/dev/null; then
-        echo -e "\033[1mInstalling pip...\033[0m"
-        wget https://bootstrap.pypa.io/get-pip.py
-        sudo python get-pip.py
-        rm get-pip.py
-    fi
-fi
+# if ! type pacman > /dev/null 2>&1; then
+#     if ! hash pip 2>/dev/null; then
+#         echo -e "\033[1mInstalling pip...\033[0m"
+#         wget https://bootstrap.pypa.io/get-pip.py
+#         sudo python get-pip.py
+#         rm get-pip.py
+#     fi
+# fi
 
 # if ! hash pip 2>/dev/null; then
 #     echo -e "\033[1mInstalling pip...\033[0m"
