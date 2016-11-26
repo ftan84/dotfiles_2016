@@ -9,7 +9,7 @@ sudo echo -e "\033[1mInstalling dotfiles...\033[0m"
 
 
 if type apt-get > /dev/null 2>&1; then
-    echo -e "\033[1mRunning Linux\033[0m"
+    echo -e "\033[1mRunning Apt-based Linux\033[0m"
     sudo apt install software-properties-common
 
     sudo add-apt-repository ppa:neovim-ppa/unstable
@@ -59,11 +59,12 @@ if type apt-get > /dev/null 2>&1; then
         texlive \
         neovim
 
-    git clone https://aur.archlinux.org/microsoft-r-open.git
+    echo -e "\033[1mInstall Microsoft R Open\033[0m"
+    wget https://mran.microsoft.com/install/mro/3.3.1/microsoft-r-open-3.3.1.tar.gz
+    tar -xf microsoft-r-open-3.3.1.tar.gz
     cd microsoft-r-open
-    makepkg -si --noconfirm
-    cd ..
-    rm -rf microsoft-r-open
+    sudo ./install.sh
+
 
 elif type pacman > /dev/null 2>&1; then
     echo -e "\033[1mRunning Pacman...\033[0m"
