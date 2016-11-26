@@ -64,6 +64,9 @@ if type apt-get > /dev/null 2>&1; then
     tar -xf microsoft-r-open-3.3.1.tar.gz
     cd microsoft-r-open
     sudo ./install.sh
+    cd ..
+    sudo rm -rf microsoft-r-open
+    sudo rm microsoft-r-open-3.3.1.tar.gz
 
 
 elif type pacman > /dev/null 2>&1; then
