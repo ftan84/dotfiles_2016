@@ -57,7 +57,10 @@ if type apt-get > /dev/null 2>&1; then
         pandoc \
         pandoc-citeproc \
         texlive \
-        neovim
+        neovim \
+        ruby \
+        rubygems \
+        nodejs
 
     echo -e "\033[1mInstall Microsoft R Open\033[0m"
     wget https://mran.microsoft.com/install/mro/3.3.1/microsoft-r-open-3.3.1.tar.gz
