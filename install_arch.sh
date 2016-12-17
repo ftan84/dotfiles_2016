@@ -59,6 +59,7 @@ if type apt-get > /dev/null 2>&1; then
         texlive \
         neovim \
         ruby \
+        ruby-dev \
         rubygems \
         nodejs
 
