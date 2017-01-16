@@ -8,7 +8,6 @@
 sudo echo -e "\033[1mInstalling dotfiles...\033[0m"
 
 
-
 if type apt-get > /dev/null 2>&1; then
     echo -e "\033[1mRunning Apt-based Linux\033[0m"
     sudo apt install software-properties-common
