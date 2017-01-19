@@ -40,8 +40,6 @@ let g:airline_theme = 'dark'
 let g:slime_target = "tmux"
 let g:slime_python_ipython = 1
 let g:slime_no_mappings = 1
-xmap <Leader>cc <Plug>SlimeRegionSend
-nmap <Leader>cc <Plug>SlimeLineSend
 
 " ==================
 " Syntastic settings

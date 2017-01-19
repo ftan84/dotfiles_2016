@@ -212,6 +212,10 @@ nnoremap <Leader>test :! nosetests -s<CR>
 " Syntastic mappings
 nnoremap <Leader>lint :SyntasticCheck<CR> :Errors<CR>
 
+" Vim-Slime mappings
+xmap <Leader>cc <Plug>SlimeRegionSend
+nmap <Leader>cc <Plug>SlimeLineSend
+
 " Python mode remap
 " nnoremap <Leader>lint :PymodeLintAuto<CR>
 
