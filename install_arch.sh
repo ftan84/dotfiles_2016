@@ -51,7 +51,7 @@ if type apt-get > /dev/null 2>&1; then
         build-essential \
         cmake \
         acpi \
-        # r-base \
+        r-base \
         libssl-dev \
         libcurl4-gnutls-dev \
         pandoc \
@@ -63,14 +63,14 @@ if type apt-get > /dev/null 2>&1; then
         rubygems \
         nodejs
 
-    echo -e "\033[1mInstall Microsoft R Open\033[0m"
-    wget https://mran.microsoft.com/install/mro/3.3.1/microsoft-r-open-3.3.1.tar.gz
-    tar -xf microsoft-r-open-3.3.1.tar.gz
-    cd microsoft-r-open
-    sudo ./install.sh
-    cd ..
-    sudo rm -rf microsoft-r-open
-    sudo rm microsoft-r-open-3.3.1.tar.gz
+    # echo -e "\033[1mInstall Microsoft R Open\033[0m"
+    # wget https://mran.microsoft.com/install/mro/3.3.1/microsoft-r-open-3.3.1.tar.gz
+    # tar -xf microsoft-r-open-3.3.1.tar.gz
+    # cd microsoft-r-open
+    # sudo ./install.sh
+    # cd ..
+    # sudo rm -rf microsoft-r-open
+    # sudo rm microsoft-r-open-3.3.1.tar.gz
 
 
 elif type pacman > /dev/null 2>&1; then
