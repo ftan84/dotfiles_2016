@@ -61,7 +61,8 @@ if type apt-get > /dev/null 2>&1; then
         ruby \
         ruby-dev \
         rubygems \
-        nodejs
+        nodejs \
+        xauth
 
     # echo -e "\033[1mInstall Microsoft R Open\033[0m"
     # wget https://mran.microsoft.com/install/mro/3.3.1/microsoft-r-open-3.3.1.tar.gz
@@ -169,7 +170,7 @@ rm -rf fonts
 # This doesn't really work on arch with MS R
 echo -e "\033[1mSetting up R environment...\033[0m"
 # sudo chmod o+w /usr/lib/microsoft-r/3.3/lib64/R/library
-sudo Rscript ~/dotfiles/R/install.R
+# sudo Rscript ~/dotfiles/R/install.R
 
 
 # Installing pip
