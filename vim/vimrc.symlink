@@ -448,7 +448,7 @@ xmap <Leader>cc <Plug>SlimeRegionSend<CR>
 nmap <Leader>cc <Plug>SlimeLineSend<CR>
 
 " Pweave mappings
-nnoremap <Leader>pweave :! Pweave -f pandoc %; pandoc --highlight-style=tango -o %:r.pdf %:r.md; rm %:r.md<CR>
+nnoremap <Leader>pw :! Pweave -f pandoc %; pandoc --highlight-style=tango -o %:r.pdf %:r.md; rm %:r.md<CR>
 
 " Python mode remap
 " nnoremap <Leader>lint :PymodeLintAuto<CR>
