@@ -72,7 +72,8 @@ else
         lmodern \
         xzdec \
         texlive \
-        texlive-latex-extra
+        texlive-latex-extra \
+        xauth
 fi
 
 
