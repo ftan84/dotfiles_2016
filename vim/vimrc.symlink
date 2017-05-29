@@ -211,6 +211,10 @@ nnoremap <Leader>test :! nosetests -s<CR>
 " Syntastic mappings
 nnoremap <Leader>lint :SyntasticCheck<CR> :Errors<CR>
 
+" Slime mappings
+nnoremap <Leader>cc :<range>SlimeSend
+vnoremap <Leader>cc :<range>SlimeSend
+
 " Python mode remap
 " nnoremap <Leader>lint :PymodeLintAuto<CR>
 
