@@ -73,7 +73,9 @@ else
         xzdec \
         texlive \
         texlive-latex-extra \
-        xauth
+        xauth \
+        libopenblas-dev \
+        pkg-config
 fi
 
 
