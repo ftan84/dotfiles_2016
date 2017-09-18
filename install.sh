@@ -138,6 +138,12 @@ else
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
+# Install Atom
+cd ~
+echo -e "\033[1mInstalling Atom\033[0m"
+wget https://atom.io/download.deb
+sudo dpkg -i atom-amd64.deb
+
 
 # Symlinks
 echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
@@ -157,6 +163,9 @@ fi
 if [ -e '.emacs' ]; then
     mv ~/.emacs ~/.old-dotfiles
 fi
+if [ -e '.atom' ]; then
+    mv ~/.atom ~/.old-dotfiles
+fi
 ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
@@ -165,6 +174,7 @@ ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
+ln -s ~/dotfiles/atom ~/.atom
 sudo chmod a+w /usr/local/lib/R/site-library
 
 
