@@ -141,8 +141,8 @@ fi
 # Install Atom
 cd ~
 echo -e "\033[1mInstalling Atom\033[0m"
-wget https://atom.io/download/deb
-sudo dpkg -i atom-amd64.deb
+wget https://atom.io/download/deb -O atom.deb
+sudo dpkg -i atom.deb
 
 
 # Symlinks
