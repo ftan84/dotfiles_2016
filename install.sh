@@ -202,7 +202,7 @@ cd ~
 
 # Install atom packages from list
 cd ~
-apm install --packages-file .atom/package.list
+apm install --packages-file ~/dotfiles/atom/package.list
 
 
 # Set zsh as default
