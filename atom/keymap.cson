@@ -6,7 +6,13 @@
   'ctrl-k': 'window:focus-pane-above'
 
   # split pane
-  'ctrl-k h': 'pane:split-left'
-  'ctrl-k l': 'pane:split-right'
-  'ctrl-k j': 'pane:split-down'
-  'ctrl-k k': 'pane:split-up'
+  'ctrl-w h': 'pane:split-left'
+  'ctrl-w l': 'pane:split-right'
+  'ctrl-w j': 'pane:split-down'
+  'ctrl-w k': 'pane:split-up'
+
+  # move pane
+  'ctrl-w shift-h': 'window:move-active-item-to-pane-on-left'
+  'ctrl-w shift-l': 'window:move-active-item-to-pane-on-right'
+  'ctrl-w shift-k': 'window:move-active-item-to-pane-above'
+  'ctrl-w shift-j': 'window:move-active-item-to-pane-below'
