@@ -16,3 +16,9 @@
   'ctrl-w shift-l': 'window:move-active-item-to-pane-on-right'
   'ctrl-w shift-k': 'window:move-active-item-to-pane-above'
   'ctrl-w shift-j': 'window:move-active-item-to-pane-below'
+
+# Add macro support
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+    'q': 'atom-keyboard-macros-vim:toggle_record_macro_vim'
+    '@': 'atom-keyboard-macros-vim:execute_macro_vim'
+    'Q': 'atom-keyboard-macros:call_last_kbd_macro'
