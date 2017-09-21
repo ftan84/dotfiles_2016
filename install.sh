@@ -144,6 +144,7 @@ echo -e "\033[1mInstalling Atom\033[0m"
 wget https://atom.io/download/deb -O atom.deb
 sudo apt -fy install atom.deb
 rm atom.deb
+rm .atom/config.cson
 
 
 # Symlinks
@@ -175,7 +176,7 @@ ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
-ln -s ~/dotfiles/atom ~/.atom
+ln -s ~/dotfiles/atom/config.cson ~/.atom/config.cson
 sudo chmod a+w /usr/local/lib/R/site-library
 
 
@@ -198,6 +199,10 @@ if [ -d 'viminstaller' ]; then
     rm -rf ~/viminstaller
 fi
 cd ~
+
+# Install atom packages from list
+cd ~
+apm install --packages-file .atom/package.list
 
 
 # Set zsh as default
