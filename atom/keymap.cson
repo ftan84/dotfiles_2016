@@ -1,2 +1,12 @@
-# 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
-#   'w': 'vim-mode-plus:move-up'
+'atom-text-editor':
+  # focus pane
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-j': 'window:focus-pane-below'
+  'ctrl-k': 'window:focus-pane-above'
+
+  # split pane
+  'ctrl-k h': 'pane:split-left'
+  'ctrl-k l': 'pane:split-right'
+  'ctrl-k j': 'pane:split-down'
+  'ctrl-k k': 'pane:split-up'
