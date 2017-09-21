@@ -177,6 +177,7 @@ ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-the
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
 ln -s ~/dotfiles/atom/config.cson ~/.atom/config.cson
+ln -s ~/dotfiles/atom/keymap.cson ~/.atom/keymap.cson
 sudo chmod a+w /usr/local/lib/R/site-library
 
 
