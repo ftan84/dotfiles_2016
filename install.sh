@@ -142,7 +142,7 @@ fi
 cd ~
 echo -e "\033[1mInstalling Atom\033[0m"
 wget https://atom.io/download/deb -O atom.deb
-sudo apt -fy install atom.deb
+sudo apt -fy install ./atom.deb
 rm atom.deb
 rm .atom/config.cson
 
