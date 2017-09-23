@@ -24,9 +24,6 @@
       
     '''
   core:
-    disabledPackages: [
-      "linter-lintr"
-    ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
@@ -43,7 +40,7 @@
     withPep8: true
   "platformio-ide-terminal":
     style:
-      theme: "solarized-dark"
+      theme: "one-dark"
   welcome:
     showOnStartup: false
 ".breakpoints.hydrogen":
