@@ -65,6 +65,7 @@ else
         acpi \
         r-base \
         libssl-dev \
+        libcurl4-openssl-dev \
         libcurl4-gnutls-dev \
         pandoc \
         pandoc-citeproc \
