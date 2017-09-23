@@ -9,8 +9,8 @@ packagelist <- c('devtools',
 newpackages <- packagelist[!(packagelist %in% installed.packages()[,'Package'])]
 if (length(newpackages)) {
     install.packages(newpackages,
-                     type='source',
-                     repos='http://cran.cnr.berkeley.edu/')
+                     type = 'source',
+                     repos = 'https://cloud.r-project.org/')
 }
 # install.packages('tufte', type = 'source', repos='https://cran.cnr.berkeley.edu/')
 
