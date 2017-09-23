@@ -92,12 +92,6 @@ sudo make install
 # Create vim directory for swap files
 mkdir -p ~/.vim-tmp
 
-
-# Run R install script
-echo -e "\033[1mSetting up R environment...\033[0m"
-sudo Rscript ~/dotfiles/R/install.R
-
-
 # Installing pip
 if ! hash pip 2>/dev/null; then
     echo -e "\033[1mInstalling pip...\033[0m"
@@ -109,6 +103,12 @@ if ! hash pip 2>/dev/null; then
     sudo -H pip install --no-deps stevedore
 fi
 
+# Install Jupyter
+sudo pip install jupyter
+
+# Run R install script
+echo -e "\033[1mSetting up R environment...\033[0m"
+sudo Rscript ~/dotfiles/R/install.R
 
 # Install Vundle
 cd ~
