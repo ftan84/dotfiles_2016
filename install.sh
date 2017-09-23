@@ -106,9 +106,6 @@ fi
 # Install Jupyter
 sudo pip install jupyter
 
-# Run R install script
-echo -e "\033[1mSetting up R environment...\033[0m"
-sudo Rscript ~/dotfiles/R/install.R
 
 # Install Vundle
 cd ~
@@ -138,6 +135,7 @@ else
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
+
 # Install Atom
 cd ~
 echo -e "\033[1mInstalling Atom\033[0m"
@@ -146,6 +144,11 @@ sudo apt -fy install ./atom.deb
 mkdir .atom
 rm atom.deb
 rm .atom/config.cson
+
+
+# Run R install script
+echo -e "\033[1mSetting up R environment...\033[0m"
+sudo Rscript ~/dotfiles/R/install.R
 
 
 # Symlinks
