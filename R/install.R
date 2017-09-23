@@ -19,6 +19,8 @@ if (length(newpackages)) {
 library(devtools)
 devtools::install_github("jalvesaq/colorout")
 devtools::install_github("rstudio/rmarkdown")
+devtools::install_github("IRkernel/IRkernel")
+IRkernel::installspec(user = FALSE)
 # install.packages('ggplot2', repos='https://cran.cnr.berkeley.edu/')
 # install.packages('dplyr', repos='https://cran.cnr.berkeley.edu/')
 # install.packages('xtable', repos='https://cran.cnr.berkeley.edu/')
