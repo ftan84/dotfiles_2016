@@ -166,9 +166,9 @@ fi
 if [ -e '.emacs' ]; then
     mv ~/.emacs ~/.old-dotfiles
 fi
-if [ -e '.atom' ]; then
-    mv ~/.atom ~/.old-dotfiles
-fi
+# if [ -e '.atom' ]; then
+#     mv ~/.atom ~/.old-dotfiles
+# fi
 ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
