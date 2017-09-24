@@ -28,13 +28,13 @@ Plugin Installer.
 ## Usage
 
 ### [Fugitive (Git Vim module)](https://github.com/tpope/vim-fugitive)
-| Command | Description |
-| --- | --- |
-| <kbd>Leader + git</kbd> | Bring up git status |
+| Command                                 | Description                                     |
+| --------------------------------------- | ----------------------------------------------- |
+| <kbd>Leader + git</kbd>                 | Bring up git status                             |
 | <kbd>Ctrl + n</kbd>/<kbd>Ctrl + p</kbd> | Move to next/previous file in git status screen |
-| <kbd>-</kbd> | Move file to staging |
-| <kbd>cc</kbd> | Commit from git status screen |
-| <kbd>Leader + push</kbd> | Push to origin |
+| <kbd>-</kbd>                            | Move file to staging                            |
+| <kbd>cc</kbd>                           | Commit from git status screen                   |
+| <kbd>Leader + push</kbd>                | Push to origin                                  |
 
 ### [Git Flow](http://danielkummer.github.io/git-flow-cheatsheet/)
 #### Initialization
