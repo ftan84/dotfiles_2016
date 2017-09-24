@@ -18,6 +18,8 @@
     contrast: "Soft"
   "linter-python":
     withPep8: true
+  "markdown-preview-plus":
+    useGitHubStyle: true
   "platformio-ide-terminal":
     style:
       theme: "one-dark"
