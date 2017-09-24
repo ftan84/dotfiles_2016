@@ -1,28 +1,5 @@
 "*":
-  Hydrogen:
-    autoScroll: false
-    kernelspec: '''
-      {
-        "kernelspecs": {
-          "python3": {
-            "resource_dir": "/home/ftan/miniconda3/envs/helloworld/share/jupyter/kernels/python3",
-            "spec": {
-              "argv": [
-                "python",
-                "-m",
-                "ipykernel_launcher",
-                "-f",
-                "{connection_file}"
-              ],
-              "env": {},
-              "display_name": "Python 3",
-              "language": "python"
-            }
-          }
-        }
-      }
-      
-    '''
+  Hydrogen: {}
   core:
     telemetryConsent: "no"
     themes: [
