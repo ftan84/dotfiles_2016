@@ -1,0 +1,24 @@
+'atom-text-editor':
+  # focus pane
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-j': 'window:focus-pane-below'
+  'ctrl-k': 'window:focus-pane-above'
+
+  # split pane
+  'ctrl-w h': 'pane:split-left'
+  'ctrl-w l': 'pane:split-right'
+  'ctrl-w j': 'pane:split-down'
+  'ctrl-w k': 'pane:split-up'
+
+  # move pane
+  'ctrl-w shift-h': 'window:move-active-item-to-pane-on-left'
+  'ctrl-w shift-l': 'window:move-active-item-to-pane-on-right'
+  'ctrl-w shift-k': 'window:move-active-item-to-pane-above'
+  'ctrl-w shift-j': 'window:move-active-item-to-pane-below'
+
+# Add macro support
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'q': 'atom-keyboard-macros-vim:toggle_record_macro_vim'
+  '@': 'atom-keyboard-macros-vim:execute_macro_vim'
+  'Q': 'atom-keyboard-macros:call_last_kbd_macro'

@@ -1,0 +1,30 @@
+"*":
+  Hydrogen: {}
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "gruvbox-plus-syntax"
+    ]
+  editor:
+    fontFamily: "Inconsolata-g for Powerline"
+    fontSize: 12
+    scrollPastEnd: true
+    showIndentGuide: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "491d0f4a-41b2-4daf-8a22-a915eee1eeef"
+  "gruvbox-plus-syntax":
+    contrast: "Soft"
+  "linter-python":
+    withPep8: true
+  "markdown-preview-plus":
+    useGitHubStyle: true
+  "platformio-ide-terminal":
+    style:
+      theme: "one-dark"
+  welcome:
+    showOnStartup: false
+".breakpoints.hydrogen":
+  editor:
+    scrollPastEnd: true

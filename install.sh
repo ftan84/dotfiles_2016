@@ -99,12 +99,6 @@ sudo make install
 # Create vim directory for swap files
 mkdir -p ~/.vim-tmp
 
-
-# Run R install script
-echo -e "\033[1mSetting up R environment...\033[0m"
-sudo Rscript ~/dotfiles/R/install.R
-
-
 # Installing pip
 if ! hash pip 2>/dev/null; then
     echo -e "\033[1mInstalling pip...\033[0m"
@@ -115,6 +109,10 @@ if ! hash pip 2>/dev/null; then
     sudo -H pip install --no-deps virtualenvwrapper
     sudo -H pip install --no-deps stevedore
 fi
+
+# Install Jupyter
+sudo -H pip install jupyter
+jupyter notebook --generate-config
 
 
 # Install Vundle
@@ -146,6 +144,21 @@ else
 fi
 
 
+# Install Atom
+cd ~
+echo -e "\033[1mInstalling Atom\033[0m"
+wget https://atom.io/download/deb -O atom.deb
+sudo apt -fy install ./atom.deb
+mkdir .atom
+rm atom.deb
+rm .atom/config.cson
+
+
+# Run R install script
+echo -e "\033[1mSetting up R environment...\033[0m"
+sudo Rscript ~/dotfiles/R/install.R
+
+
 # Symlinks
 echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
 # rm ~/.vimrc
@@ -164,6 +177,9 @@ fi
 if [ -e '.emacs' ]; then
     mv ~/.emacs ~/.old-dotfiles
 fi
+# if [ -e '.atom' ]; then
+#     mv ~/.atom ~/.old-dotfiles
+# fi
 ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
@@ -172,6 +188,8 @@ ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
 ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
+ln -s ~/dotfiles/atom/config.cson ~/.atom/config.cson
+ln -s ~/dotfiles/atom/keymap.cson ~/.atom/keymap.cson
 sudo chmod a+w /usr/local/lib/R/site-library
 
 
@@ -194,6 +212,10 @@ if [ -d 'viminstaller' ]; then
     rm -rf ~/viminstaller
 fi
 cd ~
+
+# Install atom packages from list
+cd ~
+apm install --packages-file ~/dotfiles/atom/package.list
 
 
 # Set zsh as default
