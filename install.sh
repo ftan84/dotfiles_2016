@@ -104,7 +104,8 @@ if ! hash pip 2>/dev/null; then
 fi
 
 # Install Jupyter
-sudo pip install jupyter
+sudo -H pip install jupyter
+jupyter notebook --generate-config
 
 
 # Install Vundle
