@@ -86,7 +86,8 @@ else
         texlive-latex-extra \
         xauth \
         libopenblas-dev \
-        pkg-config
+        pkg-config \
+        docker.io
     if [ "$clientinstall" = true ]; then
       sudo apt -y install \
         tmux \
@@ -175,6 +176,9 @@ fi
 echo -e "\033[1mSetting up R environment...\033[0m"
 sudo Rscript ~/dotfiles/R/install.R
 
+# Post install Docker setup
+sudo usermod -aG docker $USER
+sudo systemctl enable docker
 
 # Symlinks
 echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
