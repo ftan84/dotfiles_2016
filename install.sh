@@ -180,6 +180,11 @@ sudo Rscript ~/dotfiles/R/install.R
 sudo usermod -aG docker $USER
 sudo systemctl enable docker
 
+# Docker DataScience Notebook
+sudo docker pull jupyter/datascience-notebook
+sudo docker pull jupyter/tensorflow-notebook
+
+
 # Symlinks
 echo -e "\033[1mCreating symlinks.and setting permissions..\033[0m"
 # rm ~/.vimrc
