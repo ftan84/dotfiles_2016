@@ -87,6 +87,7 @@ else
         xauth \
         libopenblas-dev \
         pkg-config \
+        screenfetch \
         # Docker dependencies
         apt-transport-https \
         ca-certificates \
