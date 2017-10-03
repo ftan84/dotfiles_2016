@@ -88,6 +88,7 @@ else
         libopenblas-dev \
         pkg-config \
         screenfetch \
+        curl \
         # Docker dependencies
         apt-transport-https \
         ca-certificates \
