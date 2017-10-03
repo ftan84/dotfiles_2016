@@ -87,7 +87,10 @@ else
         xauth \
         libopenblas-dev \
         pkg-config \
-        docker.io
+        # Docker dependencies
+        apt-transport-https \
+        ca-certificates \
+        software-properties-common
     if [ "$clientinstall" = true ]; then
       sudo apt -y install \
         tmux \
@@ -176,7 +179,15 @@ fi
 echo -e "\033[1mSetting up R environment...\033[0m"
 sudo Rscript ~/dotfiles/R/install.R
 
-# Post install Docker setup
+# Docker setup
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt update
+sudo apt -y install docker-ce
+
 sudo usermod -aG docker $USER
 sudo systemctl enable docker
 
