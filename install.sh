@@ -67,13 +67,16 @@ else
     #     vim
     sudo apt -y install \
         wget \
+      	curl \
         tree \
         git-flow \
+        screenfetch \
         python-dev \
         python3-dev \
         build-essential \
         cmake \
-        acpi \
+        acpi
+    sudo apt -y install \
         r-base \
         libssl-dev \
         libcurl4-gnutls-dev \
@@ -84,11 +87,10 @@ else
         xzdec \
         texlive \
         texlive-latex-extra \
-        xauth \
+        xauth
+    sudo apt -y install \
         libopenblas-dev \
         pkg-config \
-        screenfetch \
-        curl \
         # Docker dependencies
         apt-transport-https \
         ca-certificates \
