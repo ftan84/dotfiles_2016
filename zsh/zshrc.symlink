@@ -111,7 +111,7 @@ alias multitail="multitail -cS python-log"
 alias tm="tmux new-session -s"
 
 # Run tmux when you log in
-tm yoda
+# tm yoda
 
 # Screenfetch at startup
 screenfetch
