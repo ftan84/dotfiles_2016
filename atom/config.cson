@@ -7,7 +7,7 @@
       "gruvbox-plus-syntax"
     ]
   editor:
-    fontFamily: "Inconsolata-g for Powerline"
+    fontFamily: "Inconsolata-dz for Powerline"
     fontSize: 12
     scrollPastEnd: true
     showIndentGuide: true
