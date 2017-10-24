@@ -22,6 +22,13 @@ cd ~/dotfiles
 ./install.sh
 ```
 
+Add a -s flag for server install. Server install is inteded for headless
+servers and exclude installation of Atom, zsh, tmux, etc.
+
+```
+./install.sh -s
+```
+
 Once the install script finishes, run `vim +PluginInstall` to run the Vundle
 Plugin Installer.
 
