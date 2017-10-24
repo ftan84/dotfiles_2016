@@ -1,16 +1,18 @@
 # This is the install script for a good R setup
 
 packagelist <- c('devtools',
-                 'ggplot2',
-                 'dplyr',
+                 # 'ggplot2',
+                 # 'dplyr',
+                 'tidyverse',
                  'xtable',
                  'ggthemes',
                  'tufte')
 newpackages <- packagelist[!(packagelist %in% installed.packages()[,'Package'])]
 if (length(newpackages)) {
-    install.packages(newpackages,
-                     type = 'source',
-                     repos = 'https://cloud.r-project.org/')
+    # install.packages(newpackages,
+    #                  type = 'source',
+    #                  repos = 'https://cloud.r-project.org/')
+    install.packages(newpackages)
 }
 # install.packages('tufte', type = 'source', repos='https://cran.cnr.berkeley.edu/')
 

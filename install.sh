@@ -4,6 +4,19 @@
 # according to my liking. Much of the code here was drawn from
 # nicknisi/dotfiles
 
+clientinstall=true
+while getopts ":s" opt
+do
+  case $opt in
+    s)
+      clientinstall=false
+  esac
+done
+if [ "$clientinstall" = true ]; then
+  echo "Running client install"
+else
+  echo "Running server install"
+fi
 
 sudo echo -e "\033[1mInstalling dotfiles...\033[0m"
 
@@ -49,17 +62,17 @@ else
     # sudo apt-get -y install pandoc
     # sudo apt-get -y install texlive-full
 
-    sudo apt-get -y build-dep \
-        libcurl4-gnutls-dev \
-        vim
+    # sudo apt-get -y build-dep \
+    #     libcurl4-gnutls-dev \
+    #     vim
     sudo apt -y install \
         wget \
-        zsh \
         tree \
         git-flow \
-        tmux \
         python-dev \
         python3-dev \
+        python-pip \
+        python3-pip \
         build-essential \
         cmake \
         acpi \
@@ -75,7 +88,13 @@ else
         texlive-latex-extra \
         xauth \
         libopenblas-dev \
-        pkg-config
+        pkg-config \
+        docker.io
+    if [ "$clientinstall" = true ]; then
+      sudo apt -y install \
+        tmux \
+        zsh
+    fi
 fi
 
 
@@ -99,16 +118,16 @@ sudo make install
 # Create vim directory for swap files
 mkdir -p ~/.vim-tmp
 
-# Installing pip
-if ! hash pip 2>/dev/null; then
-    echo -e "\033[1mInstalling pip...\033[0m"
-    wget https://bootstrap.pypa.io/get-pip.py
-    sudo python get-pip.py
-    rm get-pip.py
-    sudo -H pip install virtualenv
-    sudo -H pip install --no-deps virtualenvwrapper
-    sudo -H pip install --no-deps stevedore
-fi
+# # Installing pip
+# if ! hash pip 2>/dev/null; then
+#     echo -e "\033[1mInstalling pip...\033[0m"
+#     wget https://bootstrap.pypa.io/get-pip.py
+#     sudo python get-pip.py
+#     rm get-pip.py
+#     sudo -H pip install virtualenv
+#     sudo -H pip install --no-deps virtualenvwrapper
+#     sudo -H pip install --no-deps stevedore
+# fi
 
 # Install Jupyter
 sudo -H pip install jupyter
@@ -133,30 +152,39 @@ fi
 # rm ~/.zshrc.pre-oh-my-zsh
 # ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 
+if [ "$clientinstall" = true ]; then
+  # Manual Install of Oh-My-Zsh
+  cd ~
+  if [ -d '.oh-my-zsh' ]; then
+      echo -e "\033[1mOh-My-Zsh already installed. Skipping\033[0m"
+  else
+      echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
+      git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  fi
 
-# Manual Install of Oh-My-Zsh
-cd ~
-if [ -d '.oh-my-zsh' ]; then
-    echo -e "\033[1mOh-My-Zsh already installed. Skipping\033[0m"
-else
-    echo -e "\033[1mInstalling Oh-My-Zsh...\033[0m"
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+  # Install Atom
+  cd ~
+  echo -e "\033[1mInstalling Atom\033[0m"
+  wget https://atom.io/download/deb -O atom.deb
+  sudo apt -fy install ./atom.deb
+  mkdir .atom
+  rm atom.deb
+  rm .atom/config.cson
 fi
-
-
-# Install Atom
-cd ~
-echo -e "\033[1mInstalling Atom\033[0m"
-wget https://atom.io/download/deb -O atom.deb
-sudo apt -fy install ./atom.deb
-mkdir .atom
-rm atom.deb
-rm .atom/config.cson
 
 
 # Run R install script
 echo -e "\033[1mSetting up R environment...\033[0m"
 sudo Rscript ~/dotfiles/R/install.R
+
+# Post install Docker setup
+sudo usermod -aG docker $USER
+sudo systemctl enable docker
+
+# Docker DataScience Notebook
+sudo docker pull jupyter/datascience-notebook
+sudo docker pull jupyter/tensorflow-notebook
 
 
 # Symlinks
@@ -180,17 +208,19 @@ fi
 # if [ -e '.atom' ]; then
 #     mv ~/.atom ~/.old-dotfiles
 # fi
-ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
-ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
-ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
-ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
-ln -s ~/dotfiles/atom/config.cson ~/.atom/config.cson
-ln -s ~/dotfiles/atom/keymap.cson ~/.atom/keymap.cson
 sudo chmod a+w /usr/local/lib/R/site-library
+if [ "$clientinstall" = true ]; then
+  ln -s ~/dotfiles/zsh/zshrc.symlink ~/.zshrc
+  ln -s ~/dotfiles/tmux/tmux.conf.symlink ~/.tmux.conf
+  ln -s ~/dotfiles/zsh/toothed.zsh-theme ~/.oh-my-zsh/themes/toothed.zsh-theme
+  ln -s ~/dotfiles/zsh/not-amused.zsh-theme ~/.oh-my-zsh/themes/not-amused.zsh-theme
+  ln -s ~/dotfiles/atom/config.cson ~/.atom/config.cson
+  ln -s ~/dotfiles/atom/keymap.cson ~/.atom/keymap.cson
+fi
 
 
 # Setting git defaults
@@ -213,17 +243,19 @@ if [ -d 'viminstaller' ]; then
 fi
 cd ~
 
-# Install atom packages from list
-cd ~
-apm install --packages-file ~/dotfiles/atom/package.list
+if [ "$clientinstall" = true ]; then
+  # Install atom packages from list
+  cd ~
+  apm install --packages-file ~/dotfiles/atom/package.list
 
 
-# Set zsh as default
-if [ $SHELL == '/usr/bin/zsh' ]; then
-    echo -e "\033[1mZSH is already the default shell. Skipping\033[0m"
-else
-    echo -e "\033[1mSetting ZSH as default shell...\033[0m"
-    chsh -s $(which zsh)
+  # Set zsh as default
+  if [ $SHELL == '/usr/bin/zsh' ]; then
+      echo -e "\033[1mZSH is already the default shell. Skipping\033[0m"
+  else
+      echo -e "\033[1mSetting ZSH as default shell...\033[0m"
+      chsh -s $(which zsh)
+  fi
 fi
 
 exit 0
