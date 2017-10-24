@@ -71,6 +71,8 @@ else
         git-flow \
         python-dev \
         python3-dev \
+        python-pip \
+        python3-pip \
         build-essential \
         cmake \
         acpi \
@@ -116,16 +118,16 @@ sudo make install
 # Create vim directory for swap files
 mkdir -p ~/.vim-tmp
 
-# Installing pip
-if ! hash pip 2>/dev/null; then
-    echo -e "\033[1mInstalling pip...\033[0m"
-    wget https://bootstrap.pypa.io/get-pip.py
-    sudo python get-pip.py
-    rm get-pip.py
-    sudo -H pip install virtualenv
-    sudo -H pip install --no-deps virtualenvwrapper
-    sudo -H pip install --no-deps stevedore
-fi
+# # Installing pip
+# if ! hash pip 2>/dev/null; then
+#     echo -e "\033[1mInstalling pip...\033[0m"
+#     wget https://bootstrap.pypa.io/get-pip.py
+#     sudo python get-pip.py
+#     rm get-pip.py
+#     sudo -H pip install virtualenv
+#     sudo -H pip install --no-deps virtualenvwrapper
+#     sudo -H pip install --no-deps stevedore
+# fi
 
 # Install Jupyter
 sudo -H pip install jupyter
