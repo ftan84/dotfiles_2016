@@ -4,7 +4,7 @@ This project somewhat follows the [Semantic Version](http://semver.org)
 system with one difference -- minor adjustments to formatting, user interface,
 plugins, etc are onsidered patch upgrades.
 
-## 1.9.0 (2017-10-23)
+## 1.8.1 (2017-10-23)
 - Added a command line flag for server or client install.
 
 ## 1.8.0 (2017-09-23)
