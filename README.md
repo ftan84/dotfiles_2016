@@ -1,4 +1,4 @@
-# Dotfiles 1.8.0 (2017-09-23)
+# Dotfiles 1.8.1 (2017-10-23)
 A set of environment setting dotfiles that are tuned to my personal preference.
 
 These dotfiles are really for my personal use. Much of the code can be credited
@@ -20,6 +20,13 @@ Change into the dotfiles directory and run the install.sh script.
 ```
 cd ~/dotfiles
 ./install.sh
+```
+
+Add a -s flag for server install. Server install is inteded for headless
+servers and exclude installation of Atom, zsh, tmux, etc.
+
+```
+./install.sh -s
 ```
 
 Once the install script finishes, run `vim +PluginInstall` to run the Vundle
