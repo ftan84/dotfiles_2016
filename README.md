@@ -1,4 +1,4 @@
-# Dotfiles 1.8.0 (2017-09-23)
+# Dotfiles 1.8.1 (2017-10-23)
 A set of environment setting dotfiles that are tuned to my personal preference.
 
 These dotfiles are really for my personal use. Much of the code can be credited
