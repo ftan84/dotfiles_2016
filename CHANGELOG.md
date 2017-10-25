@@ -4,6 +4,9 @@ This project somewhat follows the [Semantic Version](http://semver.org)
 system with one difference -- minor adjustments to formatting, user interface,
 plugins, etc are onsidered patch upgrades.
 
+## Upcoming
+- Cursor shape now changes depending on mode in vim.
+
 ## 1.8.1 (2017-10-23)
 - Added a command line flag for server or client install.
 
