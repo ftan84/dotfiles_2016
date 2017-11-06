@@ -68,6 +68,7 @@ else
     sudo apt -y install \
         wget \
         tree \
+        emacs \
         git-flow \
         python-dev \
         python3-dev \
@@ -173,6 +174,8 @@ if [ "$clientinstall" = true ]; then
   rm .atom/config.cson
 fi
 
+# Spacemacs setup
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Run R install script
 echo -e "\033[1mSetting up R environment...\033[0m"
@@ -208,7 +211,7 @@ fi
 # if [ -e '.atom' ]; then
 #     mv ~/.atom ~/.old-dotfiles
 # fi
-ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
+# ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
