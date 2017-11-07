@@ -212,6 +212,7 @@ fi
 #     mv ~/.atom ~/.old-dotfiles
 # fi
 # ln -s ~/dotfiles/emacs/emacs.symlink ~/.emacs
+ln -s ~/dotfiles/spacemacs/spacemacs.symlink ~/.spacemacs
 ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ln -s ~/dotfiles/R/Rprofile.symlink ~/.Rprofile
 ln -s ~/dotfiles/mutt/muttrc.symlink ~/.muttrc
