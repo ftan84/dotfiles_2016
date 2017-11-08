@@ -41,6 +41,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install r-base
 else
     echo -e "\033[1mRunning Linux\033[0m"
+    sudo add-apt-repository ppa:kelleyk/emacs
     sudo apt update
     sudo apt -y upgrade
 
@@ -68,7 +69,8 @@ else
     sudo apt -y install \
         wget \
         tree \
-        emacs \
+        emacs25 \
+        screenfetch \
         git-flow \
         python-dev \
         python3-dev \
