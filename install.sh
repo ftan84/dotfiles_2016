@@ -232,9 +232,9 @@ echo -e "\033[1mSetting up sane git defaults...\033[0m"
 git config --global user.email "francis.adrian.tan@gmail.com"
 git config --global user.name "Francis Tan"
 git config --global push.default simple
-git config --global core.editor "vim"
-git config --global diff.tool vimdiff
-git config --global merge.tool vimdiff
+# git config --global core.editor "vim"
+# git config --global diff.tool vimdiff
+# git config --global merge.tool vimdiff
 git config --global difftool.prompt false
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
