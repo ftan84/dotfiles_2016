@@ -166,14 +166,14 @@ if [ "$clientinstall" = true ]; then
   fi
 
 
-  # Install Atom
-  cd ~
-  echo -e "\033[1mInstalling Atom\033[0m"
-  wget https://atom.io/download/deb -O atom.deb
-  sudo apt -fy install ./atom.deb
-  mkdir .atom
-  rm atom.deb
-  rm .atom/config.cson
+  # # Install Atom
+  # cd ~
+  # echo -e "\033[1mInstalling Atom\033[0m"
+  # wget https://atom.io/download/deb -O atom.deb
+  # sudo apt -fy install ./atom.deb
+  # mkdir .atom
+  # rm atom.deb
+  # rm .atom/config.cson
 fi
 
 # Spacemacs setup
@@ -251,8 +251,8 @@ cd ~
 
 if [ "$clientinstall" = true ]; then
   # Install atom packages from list
-  cd ~
-  apm install --packages-file ~/dotfiles/atom/package.list
+  # cd ~
+  # apm install --packages-file ~/dotfiles/atom/package.list
 
 
   # Set zsh as default
