@@ -41,6 +41,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install r-base
 else
     echo -e "\033[1mRunning Linux\033[0m"
+    sudo apt -y install software-properties-common
     sudo add-apt-repository ppa:kelleyk/emacs
     sudo apt update
     sudo apt -y upgrade
