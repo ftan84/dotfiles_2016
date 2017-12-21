@@ -52,7 +52,8 @@ ZSH_THEME="not-amused"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git vi-mode virtualenv virtualenvwrapper)
-plugins=(git vi-mode virtualenvwrapper)
+# plugins=(git vi-mode virtualenvwrapper)
+plugins=(git git-flow vi-mode tmux)
 
 # User configuration
 
@@ -98,8 +99,8 @@ else
 fi
 
 # Set 256 term
-export TERM="xterm-256color"
-[ -z "$TMUX" ] && export TERM=xterm-256color
+# export TERM="xterm-256color"
+# [ -z "$TMUX" ] && export TERM=xterm-256color
 
 # Sets system time to Pacific
 export TZ="/usr/share/zoneinfo/America/Los_Angeles"
@@ -108,10 +109,10 @@ export TZ="/usr/share/zoneinfo/America/Los_Angeles"
 alias multitail="multitail -cS python-log"
 
 # Alias for tmux
-alias tm="tmux new-session -s"
+# alias tm="tmux new-session -s"
 
 # Run tmux when you log in
-tm yoda
+# tm yoda
 
 # Screenfetch at startup
 screenfetch
