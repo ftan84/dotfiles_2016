@@ -228,7 +228,14 @@ git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
 # if [ -d 'viminstaller' ]; then
 #     rm -rf ~/viminstaller
 # fi
+# cd ~
+
+# Install Data Science Stack using Conda
 cd ~
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sudo chmod a+x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh
+rm Miniconda3-latest-Linux-x86_64.sh
 
 if [ "$clientinstall" = true ]; then
   # Install atom packages from list
