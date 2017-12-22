@@ -52,13 +52,8 @@ else
     sudo apt -y install \
         wget \
         tree \
-        # emacs25 \
         screenfetch \
         git-flow \
-        # python-dev \
-        # python3-dev \
-        # python-pip \
-        # python3-pip \
         build-essential \
         cmake \
         acpi \
@@ -67,7 +62,6 @@ else
         libcurl4-gnutls-dev \
         pandoc \
         pandoc-citeproc \
-        # texlive-full
         lmodern \
         xzdec \
         texlive \
@@ -75,7 +69,6 @@ else
         xauth \
         libopenblas-dev \
         pkg-config
-        # docker.io
     if [ "$clientinstall" = true ]; then
       sudo apt -y install \
         tmux \
