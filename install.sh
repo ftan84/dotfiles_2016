@@ -232,7 +232,7 @@ git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
 # Install Data Science Stack using Conda
 cd ~
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sudo chmod a+x Miniconda3-latest-Linux-x86_64.sh
+sudo chmod a+x Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
 ./Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh
 
