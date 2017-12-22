@@ -231,10 +231,10 @@ git config --global credential.helper 'cache --timeout=14400' # 4 hour timeout
 
 # Install Data Science Stack using Conda
 cd ~
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sudo chmod a+x Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
-./Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
-rm Miniconda3-latest-Linux-x86_64.sh
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+sudo chmod a+x miniconda.sh
+./miniconda.sh -b -p $HOME/miniconda3
+rm miniconda.sh
 
 if [ "$clientinstall" = true ]; then
   # Install atom packages from list
